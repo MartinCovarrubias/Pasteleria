@@ -154,6 +154,7 @@ p {
      align-content: center;
      align-items: center;
      background-size: 100% 100%;
+     margin-top: -100px;
 }
 
 .text-bg {

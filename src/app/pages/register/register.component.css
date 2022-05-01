@@ -1,0 +1,194 @@
+.bg-gradient-primary {
+    background-color: #ffffff;
+    background-image: linear-gradient(180deg, #f2b9e0 10%, #dbabc3 100%);
+    filter: none;
+    height: 150vh !important;
+    width: 100%;
+    position: absolute;
+}
+
+
+.group {
+    position: relative;
+   }
+   
+   .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+  
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+   }
+   
+   .input:focus {
+    outline: none;
+   }
+   
+   label {
+    color: #999;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+   }
+   
+   .input:focus ~ label, .input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #eb51d2;
+   }
+   
+   .bar {
+    position: relative;
+    display: block;
+   
+   }
+   
+   .bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #f771f3;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+   }
+   
+   .bar:before {
+    left: 50%;
+   }
+   
+   .bar:after {
+    right: 50%;
+   }
+   
+   .input:focus ~ .bar:before, .input:focus ~ .bar:after {
+    width: 50%;
+   }
+   
+   .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+   }
+   
+   .input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+   }
+   
+   @keyframes inputHighlighter {
+    from {
+     background: #ff7af6;
+    }
+   
+    to {
+     width: 0;
+     background: transparent;
+    }
+   }
+     
+     input:focus, select:focus, select, input.form-control:focus {
+  
+      outline:none !important;
+  
+      outline-width: 0 !important;
+  
+      box-shadow: none;
+  
+      -moz-box-shadow: none;
+  
+      -webkit-box-shadow: none;
+     }
+     .bg-register-image {
+        background: url("../../../assets/images/2286293.png");
+        background-position: center;
+        background-size: cover;
+        
+
+      }
+      .color-a{
+        color: #5d5d5d;
+        font-family: 'Poppins', sans-serif;
+      
+        text-decoration: none;
+      }
+
+      .card{
+        border-radius: 50px;
+        background: #e2d3f8;
+        box-shadow: inset -20px -20px 60px #c0b3d3,
+                    inset 20px 20px 60px #fff3ff;
+      }
+     /* From uiverse.io by @alexmaracinaru */
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+   }
+   
+   .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #feda00;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+   }
+   
+   .cta span {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #391656;
+   }
+   
+   .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta:hover:before {
+    width: 100%;
+    background: #feda00;
+   }
+   
+   .cta:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta:active {
+    transform: scale(0.95);
+   }
+   .font-login{
+    font-family: 'Poppins', sans-serif;
+   }
