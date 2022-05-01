@@ -1,0 +1,19 @@
+nav{
+    background-color: #fdf9c4;
+  
+  
+}
+
+.list {
+    text-align: center;
+    padding: .5rem;
+    justify-content: center;
+}
+.list1 {
+    text-align: start;
+    justify-content: start;
+}
+
+.color-font-a{
+    color: #eb699e;
+}

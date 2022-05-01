@@ -1,0 +1,306 @@
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text-bg h1 {
+        font-size: 51px;
+    }
+    .titlepage h2 {
+        font-size: 42px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+   
+    .text-bg h1 {
+        padding-top: 0px;
+        font-size: 33px;
+        line-height: 22px;
+    }
+    .text-bg span {
+        font-size: 28px;
+        line-height: 39px;
+    }
+    .text-bg p {
+        padding-bottom: 20px;
+    }
+    .banner_main {
+        min-height: 600px;
+    }
+    .titlepage h2 {
+        font-size: 36px;
+    }
+     .titlepage h2 {
+        padding: 0;
+    }
+   
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+ 
+    .text-bg h1 {
+        font-size: 39px;
+        line-height: 40px;
+        padding-bottom: 25px;
+    }
+    .banner_main {
+        padding-top: 100px;
+    }
+    .text-img {
+        padding-top: 30px;
+    }
+    .text-bg span {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .titlepage h2 {
+        font-size: 34px;
+    }
+    .titlepage h2 {
+        padding: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .text-bg h1 {
+        font-size: 31px;
+        line-height: 40px;
+        padding-bottom: 20px;
+    }
+    
+    .text-bg span {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .titlepage h2 {
+        font-size: 29px;
+        line-height: 40px;
+    }
+    .banner_main {
+        padding-top: 100px;
+    }
+    .text-img {
+        padding-top: 30px;
+    }
+     .titlepage h2 {
+        padding: 0;
+    }
+}
+
+
+* {
+     box-sizing: border-box !important;
+}
+
+html {
+     scroll-behavior: smooth;
+}
+
+
+a {
+     color: #1f1f1f;
+     text-decoration: none !important;
+     outline: none !important;
+     -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+     -ms-transition: all .3s ease-in-out;
+     -o-transition: all .3s ease-in-out;
+     transition: all .3s ease-in-out;
+     font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+     letter-spacing: 0;
+     font-weight: normal;
+     position: relative;
+     padding: 0 0 10px 0;
+     font-weight: normal;
+     line-height: normal;
+     color: #111111;
+     margin: 0;
+     font-family: 'Poppins', sans-serif;
+}
+*,
+*::after,
+*::before {
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+
+
+
+
+
+p {
+     margin: 0px;
+     font-weight: 500;
+     font-size: 15px;
+     line-height: 24px;
+     font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+.banner_main {
+     background-repeat: no-repeat;
+     min-height: 800px;
+     display: flex;
+     justify-content: center;
+     align-content: center;
+     align-items: center;
+     background-size: 100% 100%;
+}
+
+.text-bg {
+     text-align: left;
+     float: right;
+     max-width: 539px;
+     width: 100%;
+}
+
+.text-bg h1 {
+     color: rgb(0, 0, 0);
+     font-size: 58px;
+     line-height: 80px;
+     padding-bottom: 15px;
+     font-weight: bold;
+}
+
+.text-bg span {
+     color: #eb699e;
+     font-size: 45px;
+     line-height: 50px;
+     font-weight: bold;
+     padding-bottom: 20px;
+     display: block;
+}
+
+.text-bg p {
+     color: rgb(5, 5, 5);
+     font-size: 17px;
+     line-height: 28px;
+     padding-bottom: 60px;
+}
+
+.text-img figure {
+     margin: 0;
+}
+
+.text-img figure img {
+     width: 100%;
+}
+
+.titlepage {
+     text-align: center;
+     padding-bottom: 60px;
+}
+
+.titlepage h2 {
+     font-size: 45px;
+     color: #3e3e3e;
+     line-height: 50px;
+     font-weight: bold;
+     padding-bottom: 20px;
+}
+
+.d_flex {
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+}
+
+
+.Features {
+     background: rgb(252, 251, 243);
+     margin: 90px 0;
+}
+
+
+
+.Features .titlepage span {
+     font-size: 17px;
+     line-height: 30px;
+     color: #eb699e;
+     font-weight: 501;
+     display: block;
+     padding-top: 10px;
+     text-transform: uppercase;
+}
+
+.Features .Our_box {
+     
+     
+     text-align: center;
+     margin-bottom: 30px;
+     padding: 60px 0;
+     border-radius: 50px;
+background: #fdf9c4;
+box-shadow: inset 20px -20px 60px #d5d271,
+            inset -20px 20px 60px #ffff99;
+}
+
+.Features .Our_box h4 {
+     font-size: 20px;
+     line-height: 30px;
+     font-weight: 501;
+     padding-top: 30px;
+     padding-bottom: 0;
+}
+
+
+/*************************************************** */
+/* From uiverse.io */
+.buttonn {
+    --color: #560bad;
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    width: 10em;
+    height: 3em;
+    line-height: 2.8em;
+    margin: 0px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .8s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+    text-align: center;
+   }
+   
+   .buttonn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 160px;
+    width: 200px;
+    border-radius: 50%;
+   }
+   
+   .buttonn:hover {
+    color: #fff;
+   }
+   
+   .buttonn:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+   }
+   
+   .buttonn:hover:before {
+    top: -35px;
+    left: -19px;
+   }
+   
+   .buttonn:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+   }

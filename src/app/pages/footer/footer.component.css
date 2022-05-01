@@ -1,0 +1,31 @@
+footer {
+    background-color: #fdf9c4;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+   
+  }
+
+  .size-icons{
+    font-size: 1.5rem;
+  }
+
+  .list-inline{
+    list-style: none;
+    padding-left: 5%;
+  }
+
+  .color-icon-fb{
+    color: #3b5998;
+  }
+  .color-icon-insta{
+    color: #e1306c;
+  }
+
+  .color-icon-twitter{
+    color: #1da1f2;
+  }
+
+  .color-a{
+    color: #24292e;
+  }
