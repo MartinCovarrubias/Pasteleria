@@ -1,50 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
 
-</head>
 
-<body class="bg-gradient-primary">
+<app-header></app-header>
 
-    <div class="container">
-         <div class="caja mt-5"> 
-        <div class="card o-hidden border-0 shadow-lg ">
-            <div class="card-body p-0">
+<div class="bg-gradient-primary">
+
+    <div class="container  xd">
+         <div > 
+        <div class="card o-hidden border-0 shadow-lg">
+            <div class="card-body p-0 ">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
                     <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-0 font-login">Register of users</h1>
+                                <h1 class="h4 text-gray-900 mb-0 font-login">Registro de usuarios</h1>
                             </div>
-                            <form class="user p-4" [formGroup]="formregistro" (submit)="enviarData()" method="post">
-                                <div class="group mt-3">
-                                    <input required="" type="text"  autocomplete="off"  formControlName="nombre" class="input form-control">
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <label class="font-login">Name</label>
-                                </div>
-                                <div class="group row mt-4">
+                            <form class="user p-4 needs-validation" [formGroup]="formregistro" (submit)="enviarData()" method="post" novalidate>
+                              
+                                <div class="group row ">
                                     <div class="col-sm-6 mb-3 mb-sm-0 mt-4">
+                                        <input required="" type="text"  autocomplete="off" formControlName="nombre" class="input form-control">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <div class="invalid-feedback">
+                                            Solo se aceptan letras.
+                                          </div>
+                                        <label class="font-login mt-4"style="margin-left: 10px;">Nombre</label>
+                                    </div>
+                                    <div class="group col-sm-6 mt-4">
                                         <input required="" type="text"  autocomplete="off" formControlName="apellidoP" class="input form-control">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label class="font-login mt-4"style="margin-left: 10px;">father's last name</label>
-                                    </div>
-                                    <div class="group col-sm-6 mt-4">
-                                        <input required="" type="text"  autocomplete="off" formControlName="apellidoM" class="input form-control">
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label class="font-login" style="margin-left: 10px;">mother's last name</label>
+                                        <div class="invalid-feedback">
+                                            Solo se aceptan letras.
+                                          </div>
+                                        <label class="font-login" style="margin-left: 10px;">Apellido paterno</label>
                                     </div>
                                 </div>
                                 <div class="group row mt-4">
@@ -52,31 +44,43 @@
                                         <input required="" type="email"  autocomplete="off" formControlName="correo" class="input form-control">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label class="font-login mt-4"style="margin-left: 10px;">Email</label>
+                                        <div class="invalid-feedback">
+                                            Ingresa un correo valido.
+                                          </div>
+                                        <label class="font-login mt-4"style="margin-left: 10px;">Correo</label>
                                     </div>
                                     <div class="group col-sm-6 mt-4">
                                         <input required="" type="number"  autocomplete="off" formControlName="telefono" class="input form-control">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label class="font-login"style="margin-left: 10px;">Phone number</label>
+                                        <div class="invalid-feedback">
+                                            Solo se aceptan numeros.
+                                          </div>
+                                        <label class="font-login"style="margin-left: 10px;">Telefono</label>
                                     </div>
                                 </div>
                                 <div class="group mt-5">
                                     <input required="" type="text"  autocomplete="off" formControlName="direccion" class="input form-control">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label class="font-login">Address</label>
+                                    <label class="">Dirección</label>
+                                    <div class="invalid-feedback">
+                                        Ingresa una dirección valida.
+                                      </div>
                                 </div>
                                 <div class="group mt-5">
                                     <input required="" type="text"  autocomplete="off" formControlName="password" class="input form-control">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label class="font-login">Password</label>
+                                    <label class="font-login">Contraseña</label>
+                                    <div class="invalid-feedback">
+                                     Se acepta min 6 caracteres, max 8 caracteres.
+                                      </div>
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button class="cta btn-block mt-5"[disabled]="formregistro.invalid">
-                                        <span>create</span>
+                                    <button class="cta btn-block mt-5">
+                                        <span>Registrar</span>
                                         <svg viewBox="0 0 13 10" height="10px" width="15px">
                                           <path d="M1,5 L11,5"></path>
                                           <polyline points="8 1 12 5 8 9"></polyline>
@@ -97,8 +101,7 @@
     </div>
 
     </div>
+</div>
 
-    
-</body>
+<app-footer></app-footer>
 
-</html>

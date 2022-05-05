@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {CargarScriptsService} from './cargar-scripts.service';
+import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -29,7 +30,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     RouterModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    CargarScriptsService,
+    CookieService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

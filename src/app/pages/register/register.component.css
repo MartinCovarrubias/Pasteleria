@@ -1,10 +1,9 @@
 .bg-gradient-primary {
-    background-color: #ffffff;
-    background-image: linear-gradient(180deg, #f2b9e0 10%, #dbabc3 100%);
-    filter: none;
-    height: 150vh !important;
-    width: 100%;
-    position: absolute;
+   
+    background: linear-gradient(180deg, #FFF5DA, #FFF5DA 100%);
+    padding-bottom: 18rem;
+    
+  
 }
 
 
@@ -28,6 +27,7 @@
    
    label {
     color: #999;
+    font-size: bold;
     font-size: 16px;
     font-weight: normal;
     position: absolute;
@@ -41,8 +41,8 @@
    
    .input:focus ~ label, .input:valid ~ label {
     top: -20px;
-    font-size: 14px;
-    color: #eb51d2;
+    font-size: bold;
+    color: #000000;
    }
    
    .bar {
@@ -57,7 +57,7 @@
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #f771f3;
+    background: #5D534A;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -78,7 +78,7 @@
    .highlight {
     position: absolute;
     height: 60%;
-    width: 100px;
+    width: 200px;
     top: 25%;
     left: 0;
     pointer-events: none;
@@ -91,7 +91,7 @@
    
    @keyframes inputHighlighter {
     from {
-     background: #ff7af6;
+     background: #f0524c;
     }
    
     to {
@@ -113,11 +113,10 @@
       -webkit-box-shadow: none;
      }
      .bg-register-image {
-        background: url("../../../assets/images/2286293.png");
+        background: url("../../../assets/images/register.png") no-repeat center;
         background-position: center;
         background-size: cover;
         
-
       }
       .color-a{
         color: #5d5d5d;
@@ -128,9 +127,12 @@
 
       .card{
         border-radius: 50px;
-        background: #e2d3f8;
-        box-shadow: inset -20px -20px 60px #c0b3d3,
-                    inset 20px 20px 60px #fff3ff;
+        border-radius: 50px;
+        border-radius: 50px;
+        background: #ffffff;
+        box-shadow: inset 20px 20px 60px #d9d9d9,
+                    inset -20px -20px 60px #ffffff;
+       margin-bottom: 50px;
       }
      /* From uiverse.io by @alexmaracinaru */
 .cta {
@@ -149,7 +151,7 @@
     left: 0;
     display: block;
     border-radius: 50px;
-    background: #feda00;
+    background: #5D534A;
     width: 45px;
     height: 45px;
     transition: all 0.3s ease;
@@ -161,7 +163,7 @@
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: #391656;
+    color: #ffffff;
    }
    
    .cta svg {
@@ -171,7 +173,7 @@
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: #234567;
+    stroke: #ffffff;
     stroke-width: 2;
     transform: translateX(-5px);
     transition: all 0.3s ease;
@@ -179,7 +181,7 @@
    
    .cta:hover:before {
     width: 100%;
-    background: #feda00;
+    background: #5D534A;
    }
    
    .cta:hover svg {
@@ -191,4 +193,15 @@
    }
    .font-login{
     font-family: 'Poppins', sans-serif;
+   }
+
+   .xd{
+    padding-top: 4rem;
+    margin-bottom: 2rem;
+   
+   }
+
+   h1{
+     font-style: italic;
+      font-size: 2.5rem;
    }

@@ -87,6 +87,8 @@
 
 * {
      box-sizing: border-box !important;
+   
+   
 }
 
 html {
@@ -148,6 +150,7 @@ p {
 
 .banner_main {
      background-repeat: no-repeat;
+     background-color: #FFF5DA;
      min-height: 800px;
      display: flex;
      justify-content: center;
@@ -217,8 +220,8 @@ p {
 
 
 .Features {
-     background: rgb(252, 251, 243);
-     margin: 90px 0;
+     background: #fdf8ea;
+     margin: 0px 0;
 }
 
 
@@ -235,21 +238,28 @@ p {
 
 .Features .Our_box {
      
-     
+     height: 420px;
+    
+    
      text-align: center;
-     margin-bottom: 30px;
-     padding: 60px 0;
+     margin-bottom: 40px;
+     padding: 40px 0;
      border-radius: 50px;
-background: #fdf9c4;
-box-shadow: inset 20px -20px 60px #d5d271,
-            inset -20px 20px 60px #ffff99;
+     border-radius: 32px;
+     border-radius: 32px;
+     border-radius: 32px;
+     background: #D6D2C4;
+     box-shadow:  6px 6px 12px #b4b0a5,
+                  -6px -6px 12px #f8f4e3;
 }
+
 
 .Features .Our_box h4 {
      font-size: 20px;
      line-height: 30px;
      font-weight: 501;
      padding-top: 30px;
+     margin: 10px;
      padding-bottom: 0;
 }
 
@@ -257,7 +267,7 @@ box-shadow: inset 20px -20px 60px #d5d271,
 /*************************************************** */
 /* From uiverse.io */
 .buttonn {
-    --color: #560bad;
+    --color: #5D534A;
     font-family: 'Poppins', sans-serif;
     display: inline-block;
     width: 10em;
@@ -305,3 +315,17 @@ box-shadow: inset 20px -20px 60px #d5d271,
     background: #3a0ca3;
     transition: background 0s;
    }
+
+   .ir-arriba {
+	display:none;
+    padding: 20px;
+    background-color: #9da11d;
+    border-radius:10px;
+    font-size:28px;
+    cursor: pointer;
+    position:fixed;
+    bottom:0;
+    right:0;
+    margin: 20px;
+    z-index:5000; 
+}

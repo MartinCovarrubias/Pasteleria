@@ -1,13 +1,14 @@
 nav{
-    background-color: #fdf9c4;
-  
+    background-color: #F7DAD9;
+   
   
 }
 
 .list {
-    text-align: center;
-    padding: .5rem;
-    justify-content: center;
+    
+    padding: .7rem;
+   
+ 
 }
 .list1 {
     text-align: start;

@@ -33,7 +33,7 @@
  .input:focus ~ label, .input:valid ~ label {
   top: -20px;
   font-size: 14px;
-  color: #eb51d2;
+  color: #000000;
  }
  
  .bar {
@@ -48,7 +48,7 @@
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: #f771f3;
+  background: #5D534A;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -69,7 +69,7 @@
  .highlight {
   position: absolute;
   height: 60%;
-  width: 100px;
+  width: 200px;
   top: 25%;
   left: 0;
   pointer-events: none;
@@ -82,7 +82,7 @@
  
  @keyframes inputHighlighter {
   from {
-   background: #ff7af6;
+    background: #f0524c
   }
  
   to {
@@ -107,12 +107,13 @@
 
 
    .bg-gradient-primary {
-    background-color: #ffffff;
-    background-image: linear-gradient(180deg, #f2b9e0 10%, #dbabc3 100%);
-    filter: none;
-    height: 100vh !important;
-    width: 100%;
-    position: absolute;
+   
+    background: linear-gradient(180deg, #FFF5DA, #FFF5DA 100%);
+    height: 100%!important;
+    padding-bottom: 24rem;
+    
+    
+  
 }
 
 
@@ -128,10 +129,12 @@
   }
 
   .card{
-    border-radius: 31px;
-    background: #fffdf0;
-    box-shadow: inset 50px -50px 100px #a19d7f,
-                inset -50px 50px 100px #ffffff
+
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow: inset 20px 20px 60px #d9d9d9,
+                inset -20px -20px 60px #ffffff;
+    
   }
 
   /*****************************************************
@@ -153,7 +156,7 @@
     left: 0;
     display: block;
     border-radius: 50px;
-    background: #b1dae7;
+    background: #5D534A;
     width: 45px;
     height: 45px;
     transition: all 0.3s ease;
@@ -165,7 +168,7 @@
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: #234567;
+    color: #ffffff;
    }
    
    .cta svg {
@@ -175,7 +178,7 @@
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: #234567;
+    stroke: #ffffff;
     stroke-width: 2;
     transform: translateX(-5px);
     transition: all 0.3s ease;
@@ -183,7 +186,7 @@
    
    .cta:hover:before {
     width: 100%;
-    background: #b1dae7;
+    background: #5D534A;
    }
    
    .cta:hover svg {
@@ -195,13 +198,13 @@
    }
 
    .font-login{
-    font-family: 'Poppins', sans-serif;
+    
+    font-style: italic;
+    font-size: 2.5rem;
    }
 
    .color-a{
-    color: #5d5d5d;
-    font-family: 'Poppins', sans-serif;
-  
+    color: #000000;
     text-decoration: none;
   }
 
