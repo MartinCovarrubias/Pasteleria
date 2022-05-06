@@ -1,10 +1,4 @@
-.bg-gradient-primary {
-   
-    background: linear-gradient(180deg, #FFF5DA, #FFF5DA 100%);
-    padding-bottom: 18rem;
-    
-  
-}
+
 
 
 .group {
@@ -195,13 +189,13 @@
     font-family: 'Poppins', sans-serif;
    }
 
-   .xd{
-    padding-top: 4rem;
-    margin-bottom: 2rem;
    
-   }
 
    h1{
      font-style: italic;
       font-size: 2.5rem;
+   }
+
+   .margen{
+     padding-bottom: 8rem;
    }

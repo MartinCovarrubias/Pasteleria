@@ -12,6 +12,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TblUsersComponent } from './pages/tbl-users/tbl-users.component';
+import { DataTablesModule } from "angular-datatables";
+import { EditUserComponent } from './pages/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     FooterComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TblUsersComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     FormsModule,
     RouterModule,
     HttpClientModule,
+    DataTablesModule
   ],
   providers: [
     CargarScriptsService,

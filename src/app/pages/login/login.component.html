@@ -1,7 +1,7 @@
  <app-header></app-header>
-  <div class="bg-gradient-primary ">
+  <div class=" margen">
 
-    <div class="container" >
+    <div class="container-sm" >
 
         <!-- Outer Row -->
         <div class="row justify-content-center" >
@@ -19,12 +19,15 @@
                                         <h1 class="h4 text-gray-900 mb-4 font-login">Iniciar sesión</h1>
                                     </div>
                                    
-                                    <form method="post" (ngSubmit)="enviarLogin()"[formGroup]="formlogin" >
+                                    <form method="post" class="needs-validation" (ngSubmit)="enviarLogin()"[formGroup]="formlogin" novalidate>
                                        
                                         <div class="group mt-5">
-                                            <input required="" type="text" class="input form-control"  formControlName="email">
+                                            <input required="" type="email" class="input form-control"  formControlName="email">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
+                                            <div class="invalid-feedback">
+                                                Ingresa un correo valido.
+                                              </div>
                                             <label >Correo</label>
                                           </div>
 
@@ -33,10 +36,13 @@
                                             <input required="" type="password"  autocomplete="off"  formControlName="password" class="input form-control">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
+                                            <div class="invalid-feedback">
+                                                Se acepta min 6 caracteres, max 8 caracteres.
+                                              </div>
                                             <label >Contraseña</label>
                                           </div>
                                       <div class="d-flex justify-content-center">
-                                        <button [disabled]="formlogin.invalid" class="cta btn-block mt-5">
+                                        <button  class="cta btn-block mt-5">
                                             <span>Entrar</span>
                                             <svg viewBox="0 0 13 10" height="10px" width="15px">
                                               <path d="M1,5 L11,5"></path>

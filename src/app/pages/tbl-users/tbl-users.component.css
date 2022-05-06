@@ -1,0 +1,23 @@
+.card-header{
+    text-align: center;
+}
+
+
+.m{
+    margin-right: 1rem;
+}
+
+.center{
+    text-align: center;
+}
+
+.card{
+    border-radius: 10px;
+background: #ffe3e3;
+}
+
+.margen{
+    padding-bottom: 10rem;
+    margin-bottom: 5rem;
+  }
+  

@@ -106,15 +106,7 @@
 
 
 
-   .bg-gradient-primary {
    
-    background: linear-gradient(180deg, #FFF5DA, #FFF5DA 100%);
-    height: 100%!important;
-    padding-bottom: 24rem;
-    
-    
-  
-}
 
 
 
@@ -208,3 +200,8 @@
     text-decoration: none;
   }
 
+
+  .margen{
+    padding-bottom: 8rem;
+  }
+  

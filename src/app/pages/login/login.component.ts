@@ -4,6 +4,7 @@ import { DataService } from '../../services/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import Swal from 'sweetalert2';
+import {CargarScriptsService} from '../../cargar-scripts.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,10 @@ export class LoginComponent implements OnInit {
     private ds:DataService,
      private cookie:CookieService, 
      private router:Router,
-     private activerouter:ActivatedRoute) { }
+     private activerouter:ActivatedRoute,
+     private CargarScripts:CargarScriptsService) {
+      CargarScripts.carga('form-validations.js');
+      }
 
   ngOnInit(): void {
     this.formlogin=new FormGroup(
@@ -39,32 +43,26 @@ export class LoginComponent implements OnInit {
   }
 
   enviarLogin(){
-    Swal.fire({
-      title: 'Sus datos son correctos?',
-      text: "Revise bien sus credenciales!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, iniciar sesión!',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          'Correcto!',
-          'Ha iniciado sesión..!!.',
-          'success'
-        )
-        this.suscripcion();
-      }
-    })
-  }
-
-
-  suscripcion(){
     const {email, password} = this.formlogin.value
     this.ds.enviarCredenciales(email, password)
     .subscribe(response =>{
+           Swal.fire({
+        title: 'Bienvenido',
+        text: 'Has iniciado sesión correctamente',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+        background:'#fef2f7',
+        allowOutsideClick:true,
+        allowEscapeKey:true,
+        allowEnterKey:true,
+        padding: '2rem',
+        backdrop:true
+       
+      
+      }).then(()=>{
+    
+      }
+      )
      
       console.log('sesion iniciada correctamente',response);
   
@@ -75,25 +73,35 @@ export class LoginComponent implements OnInit {
       this.cookie.set('id_usuario',id_usuario);
       this.cookie.set('token',token,1,'/');
       this.router.navigate(['/']);
+      
+
     },
       error =>{
       console.log('error al iniciar sesion'); 
       const err = error
-      this.errorSesion(err);
+      Swal.fire({
+        title: 'Error',
+        text: 'Correo o contraseña incorrectos',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+        background:'#fef2f7',
+        allowOutsideClick:false,
+        allowEscapeKey:false,
+        allowEnterKey:false,
+        padding: '2rem',
+        backdrop:true
+      
+      }
+      ).then(()=>{
+        this.formlogin.reset();
+      }
+      )
+     
     })
-    
   }
 
-errorSesion(error:any){
-  Swal.fire({
-    icon: 'error',
-    title: 'Oops!!...',
-    text: 'No se pudo iniciar sesión, revisa tus credenciales!',
-    
-  })
-//limpiar campos al presionar ok
-  this.formlogin.reset();
-}
 
 
+  
 }
+

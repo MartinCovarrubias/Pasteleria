@@ -3,7 +3,7 @@
 <body>
   
 
-    <section class="banner_main ">
+    <section class="banner_main " *ngIf="hiddenElments()">
         <div class="container-fluid">
            <div class="row d_flex">
               <div class="col-md-6">
@@ -25,7 +25,7 @@
            </div>
         </div>
      </section>
-    <section class="Features " >
+    <section class="Features vh-50" >
         <div class="p-4" id="cakes">
             <div class="container">
                <div class="row">

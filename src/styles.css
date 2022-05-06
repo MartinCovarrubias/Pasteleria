@@ -6,6 +6,7 @@ html {
   body {
     margin: 0;
     margin-bottom: 40px;
+    background-color: #FFF5DA;
   }
   
   a,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,form,input,textarea,button,select,blockquote,pre,code,table,th,td,hr,img,figure,figcaption,fieldset,legend,address,caption,footer,header,main,menu,nav,section,article,aside,audio,video {
