@@ -26,7 +26,7 @@
               </ul>
             </li> 
             <li class="nav-item" *ngIf="hiddenElmentsUser()">
-              <a class="nav-link active">Perfil</a>
+              <a (click)="editarUsuario()" class="nav-link active cursor">Perfil</a>
             </li>
             <li class="nav-item" *ngIf="hiddenElmentsUser()">
               <a class="nav-link active">Mis pedidos</a>

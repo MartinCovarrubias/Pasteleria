@@ -1,1 +1,91 @@
+<app-header></app-header>
+<div class="margen">
+    <div class="container-sm card-center">
+        <div class="card  mt-5 col-sm-4">
+            <div class="card-header centro ">
+                <h3>Editar Usuario</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)" class="p-2 needs-validation"  method="post" novalidate >
+                              
+                <div class="group row ">
+                    <div class="col-sm-6 mb-3 mb-sm-0 mt-2">
+                        <label class="label">Nombre</label>
+                        <input required="" type="text"  autocomplete="off" formControlName="nombre" class="input form-control">
+                        <div class="invalid-feedback">
+                            Solo se aceptan letras.
+                          </div>
+                    </div>
 
+                    <div class="group col-sm-6 mt-2">
+                        <label class="font-login">Apellido paterno</label>
+                        <input required type="text"  autocomplete="off" formControlName="apellidoP" class="input form-control">
+                        <div class="invalid-feedback">
+                            Solo se aceptan letras.
+                          </div>
+                    </div>
+                </div>
+
+                <div class="group row">
+                    <div class="col-sm-6  mb-sm-0 mt-4" >
+                        <label class="font-login">Correo</label>
+                        <input required type="email"  autocomplete="off" formControlName="correo" class="input form-control">
+                        <div class="invalid-feedback">
+                            Ingresa un correo valido.
+                          </div>
+                      
+                    </div>
+                    
+                    <div class="group col-sm-6 mt-4" *ngIf="ocultarU()" >
+                        <label class="font-login">Telefono</label>
+                        <input required="" type="number"  autocomplete="off" formControlName="telefono" class="input form-control">
+                        <div class="invalid-feedback">
+                            Solo se aceptan numeros.
+                          </div>
+                        
+                    </div>
+                </div>
+                <div class="group mt-4" *ngIf="ocultar()">
+                    <label class="">Contraseña</label>
+                    <input required="" type="password"  autocomplete="off" formControlName="password" class="input form-control">
+                   
+                    <div class="invalid-feedback">
+                        Ingresa una dirección valida.
+                      </div>
+                </div>
+                <div class="group mt-4"*ngIf="ocultarU()">
+                    <label class="">Dirección</label>
+                    <input required="" type="text"  autocomplete="off" formControlName="direccion" class="input form-control">
+                   
+                    <div class="invalid-feedback">
+                        Ingresa una dirección valida.
+                      </div>
+                </div>
+
+                <div class="group mt-5" *ngIf="ocultarA()">
+                
+                    <select class="form-select input" formControlName="id_rol">
+                      
+                        <option value="{{rol.id_rol}}" *ngFor="let rol of roles">{{rol.nombre_rol}}</option>
+                    
+                    </select>
+                </div>
+              
+
+                <div class="d-flex justify-content-center">
+                    <button class="cta btn-block mt-5">
+                        <span>Editar</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                          <path d="M1,5 L11,5"></path>
+                          <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                      </button>
+                  </div>
+               
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

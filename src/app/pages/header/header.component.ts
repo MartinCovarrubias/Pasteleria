@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private cookie:CookieService) { }
+  constructor(private cookie:CookieService,private router:Router) { }
 
   //declarame la variable edit tipo  boolean
   public edit : boolean;
@@ -66,5 +67,15 @@ hiddenElmentsUser(){
     return this.edit = false;
   }
 }
+
+
+
+editarUsuario(){
+  const id_usuario = this.cookie.get('id_usuario');
+  this.router.navigate(['/edit-user',id_usuario]);
+}
+
+
+
 
 }

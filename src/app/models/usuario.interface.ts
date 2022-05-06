@@ -1,4 +1,5 @@
 export interface UsuarioI {
+   
     id_usuario: string;
     nombre: string;
     apellidoP: string;
