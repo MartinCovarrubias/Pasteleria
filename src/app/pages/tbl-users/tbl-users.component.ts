@@ -26,7 +26,7 @@ export class TblUsersComponent implements OnInit,OnDestroy {
      
     };
 
-   //consumir servicio que esta dentro de un arreglo
+  
     this.dataservice.getClientes().subscribe(
       (data)=>{
         this.clientes = data;

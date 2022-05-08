@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RolGuard } from './guards/rol.guard';
+import { SessionGuard } from './guards/session.guard';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -10,7 +12,10 @@ const routes: Routes = [
   { path:'', component:HomeComponent},
   { path:'login', component:LoginComponent},
   { path:'register', component:RegisterComponent},
-  { path:'tbl-users', component:TblUsersComponent},
+
+
+  { path:'tbl-users', component:TblUsersComponent, canActivate: [SessionGuard,RolGuard]},
+
   { path:'edit-user/:id', component:EditUserComponent},
 ];
 

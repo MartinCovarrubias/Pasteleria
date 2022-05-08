@@ -15,6 +15,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TblUsersComponent } from './pages/tbl-users/tbl-users.component';
 import { DataTablesModule } from "angular-datatables";
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
+import { InjectSessionInterceptor } from './interceptors/inject-session.interceptor';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,11 @@ import { EditUserComponent } from './pages/edit-user/edit-user.component';
   providers: [
     CargarScriptsService,
     CookieService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InjectSessionInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

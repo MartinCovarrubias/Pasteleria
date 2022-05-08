@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UsuarioI } from '../models/usuario.interface';
 import { ResponseI } from '../models/response.interface';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -11,14 +12,19 @@ import { ResponseI } from '../models/response.interface';
 })
 export class DataService {
  urlLogin: string = 'http://localhost:8080/auth/';
- url: string = 'http://localhost:8080/public/';
+ url: string = 'http://localhost:8080/api/';
+
+ header = new HttpHeaders()
 
 
+  constructor(private http: HttpClient, private cookieService: CookieService) { 
+    const token = this.cookieService.get('token');
+    this.header.append('Content-Type', 'application/json');
+   // this.header.append('HTTP_AUTHORIZATION', 'Bearer ' + token);
 
-  constructor(private http: HttpClient) { }
-  header = new HttpHeaders()
-  .set('Content-Type', 'application/json');
-
+  }
+  
+  
 
   // *Este metodo es para el registro de clientes
   public post (url:string, body: any){
@@ -36,7 +42,7 @@ export class DataService {
 
   //*Este metodo es para ver solo clientes
  getClientes(){
-  return this.http.get(this.url+'clientes',{headers:this.header});
+  return this.http.get(this.url+'clientes');
  }
 
  //*Este metodo es para eliminar usuarios

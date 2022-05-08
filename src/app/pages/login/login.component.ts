@@ -71,7 +71,8 @@ export class LoginComponent implements OnInit {
       const {id_rol} = response;
       this.cookie.set('id_rol',id_rol);
       this.cookie.set('id_usuario',id_usuario);
-      this.cookie.set('token',token,1,'/');
+      //duracion del token de una hora
+      this.cookie.set('token',token,1/24);
       this.router.navigate(['/']);
       
 
