@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+  <div class="margen">
+    <div class="container">
+        <div class="card mt-4">
+           <div class="card-header">
+               <h3 class="card-title">Administradores</h3>
+           </div>
+           <div class="card-body">
+               <div class="table-responsive center">
+                   <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table table-striped">
+                       <thead class="center">
+                           <tr>
+                               <th>Nombre</th>
+                               <th>Apellido</th>
+                               <th>Telefono</th>
+                               <th>Correo</th>
+                               <th>Dirección</th>
+                               <th>Gestión</th>
+                               </tr>
+                               </thead>
+                               <tbody>
+                               <tr *ngFor="let c of admins">
+                                   <td>{{c.nombre}}</td>
+                                   <td>{{c.apellidoP}}</td>
+                                   <td>{{c.telefono}}</td>
+                                   <td>{{c.correo}}</td>
+                                   <td>{{c.direccion}}</td>
+                                   <td>
+                                       <a (click)="editarUsuario(c.id_usuario)" ><i class="btn  btn-warning bi bi-pencil-square m"></i></a>
+                                      
+                                   </td>
+                               </tr>
+                   </table>
+               </div>
+           </div>
+        </div>
+   </div>
+
+  </div>
+
+<app-footer></app-footer>

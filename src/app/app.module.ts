@@ -16,6 +16,9 @@ import { TblUsersComponent } from './pages/tbl-users/tbl-users.component';
 import { DataTablesModule } from "angular-datatables";
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { InjectSessionInterceptor } from './interceptors/inject-session.interceptor';
+import { TblAdminComponent } from './pages/tbl-admin/tbl-admin.component';
+import { TblCakesComponent } from './pages/tbl-cakes/tbl-cakes.component';
+import { AddCakesComponent } from './pages/add-cakes/add-cakes.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { InjectSessionInterceptor } from './interceptors/inject-session.intercep
     LoginComponent,
     RegisterComponent,
     TblUsersComponent,
-    EditUserComponent
+    EditUserComponent,
+    TblAdminComponent,
+    TblCakesComponent,
+    AddCakesComponent
   ],
   imports: [
     BrowserModule,

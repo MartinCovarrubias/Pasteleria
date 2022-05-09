@@ -62,11 +62,22 @@ export class DataService {
     return this.http.get(this.url+'roles',{headers:this.header});
   }
 
-  //metodo para editar usuario
+  //*metodo para editar usuario
 editUser(form:UsuarioI,id:any):Observable<ResponseI>{
   let direccion = this.url + "usuarios/update/" + id;
   return this.http.put<ResponseI>(direccion,form);
   }
+
+  //*metodo para ver los administradores
+  getAdmins(){
+    return this.http.get(this.url+'administradores');
+   }
+
+   //* para ver todos los pasteles
+
+   getCakes(){
+    return this.http.get(this.url+'pasteles');
+   }
 
   
 }
