@@ -20,7 +20,7 @@ const routes: Routes = [
   { path:'tbl-users', component:TblUsersComponent, canActivate: [SessionGuard,RolGuard]},
   { path:'tbl-admin', component:TblAdminComponent, canActivate: [SessionGuard,RolGuard]},
   { path:'tbl-cakes', component:TblCakesComponent, canActivate: [SessionGuard,RolGuard]},
-  { path:'edit-user/:id', component:EditUserComponent,canActivate: [SessionGuard,RolGuard]},
+  { path:'edit-user/:id', component:EditUserComponent,canActivate: [SessionGuard]},
   { path:'add-cakes', component:AddCakesComponent,canActivate: [SessionGuard,RolGuard]},
 ];
 

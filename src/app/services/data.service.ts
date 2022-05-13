@@ -24,7 +24,6 @@ export class DataService {
 
   }
   
-  
 
   // *Este metodo es para el registro de clientes
   public post (url:string, body: any){
@@ -78,6 +77,11 @@ editUser(form:UsuarioI,id:any):Observable<ResponseI>{
    getCakes(){
     return this.http.get(this.url+'pasteles');
    }
+   
 
+   eliminarCakes(id:any){
+    return this.http.delete(this.url+'pasteles/delete/'+id,{headers:this.header});
+  }
+  
   
 }

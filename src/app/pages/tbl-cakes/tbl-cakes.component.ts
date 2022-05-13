@@ -15,8 +15,7 @@ export class TblCakesComponent implements OnInit {
   constructor(private dataservice: DataService, private router:Router,private _sanitizer: DomSanitizer) { }
   public previsualizacion: string;
   public archivos: any = [];
- // id_image:any
-//  image64:any;
+
   cakes:any;
   dtOptions: DataTables.Settings = {};
   dtTrigger = new Subject<any>();
@@ -49,10 +48,52 @@ ngOnDestroy():void {
 
 
 editarCakes(id: any){
-  this.router.navigate(['/edit-user/',id]);
+  //this.router.navigate(['/edit-user/',id]);
 }
 
+eliminarCakes(id: any){
+  this.dataservice.eliminarCakes(id).subscribe(
+    (data)=>{
+      Swal.fire({
+        title: 'Eliminado',
+        text: 'El usuario ha sido eliminado',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+        background:'#fef2f7',
+        allowOutsideClick:true,
+        allowEscapeKey:true,
+        allowEnterKey:true,
+        padding: '2rem',
+        backdrop:true
+      }).then(()=>{
+        this.cakes = data;
+        window.location.reload();
+       
+      }
+      )
 
+
+    },
+    error =>{
+      Swal.fire({
+        title: 'Error',
+        text: 'No se pudo eliminar el usuario',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+        background:'#fef2f7',
+        allowOutsideClick:true,
+        allowEscapeKey:true,
+        allowEnterKey:true,
+        padding: '2rem',
+        backdrop:true
+      }).then(()=>{
+       window.location.reload();
+        console.log(error, "no se pudo eliminar");
+      }
+      )
+      
+    })
+}
 
 
 

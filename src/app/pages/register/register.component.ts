@@ -59,8 +59,35 @@ public enviarData(){
   this.DataService.post('http://localhost:8080/public/usuarios/create', 
   this.formregistro.value)
   .subscribe(respuesta => {
-    console.log('usuario agregado');
-  })
+     Swal.fire({
+      title: 'Registro exitoso',
+      text: 'El usuario se ha registrado correctamente',
+      icon: 'success',
+      showCancelButton: false,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      this.router.navigate(['/login']);
+    }
+    )
+  },
+  error => {
+    Swal.fire({
+      title: 'Error',
+        text: 'No se ha podido registrar el usuario',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+        background:'#fef2f7',
+        allowOutsideClick:false,
+        allowEscapeKey:true,
+        allowEnterKey:true,
+        padding: '2rem',
+        backdrop:true
+    }).then(() => {
+      window.location.reload();
+    })
+  });
 }
 
 

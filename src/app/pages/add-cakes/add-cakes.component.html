@@ -1,33 +1,37 @@
 <app-header></app-header>
 
-<div class="container vh100 d-flex justify-content-center flex-wrap">
-    <div class="card col-sm-6 mt-4 ">
+<div class="container vh100 d-flex justify-content-center flex-wrap mb-4">
+    <div class="card col-sm-6 mt-4 margen">
         <div class="card-header">
             <h3 class="card-title">Agregar Pastel</h3> 
     </div>
     <div class="card-body">
-            <form>
+            <form [formGroup]="formAddCake" (submit)="enviarData()" >
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre">
                 </div>
-                <div class="form-group mt-4">
-                    <label for="imagen">Imagen</label>
-                    <input type="file" class="form-control" id="imagen" placeholder="Imagen">
+                <label class="mt-4">Imagen</label>
+                <div class="form-group mt-2">
+                   <div class="mb-4"> 
+                    <img [src]="cakeImg" alt="imagen del pastel"  width="250" height="250">
+                   </div>
+                    <input type="file"  formControlName="imagen_pastel" alife-file-to-base64 (onFileChanged)="onFileChange($event)" accept=".png, .jpg, .jpeg"  class="form-control" id="imagen" placeholder="Imagen">
                 </div>
                 <div class="form-group mt-4">
                     <label for="descripcion">Descripcion</label>
-                    <input type="text" class="form-control" id="descripcion" placeholder="Descripcion">
+                    <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="Descripcion">
                 </div>
                 <div class="form-group mt-4">
                     <label for="precio">Precio</label>
-                    <input type="text" class="form-control" id="precio" placeholder="Precio">
+                    <input type="number" class="form-control" id="precio" formControlName="precio" placeholder="Precio">
                 </div>
                 <div class="form-group mt-4">
                     <label for="estado">Estado</label>
-                    <select class="form-control" id="estado">
-                        <option>Activo</option>
-                        <option>Inactivo</option>
+                    <select class="form-select" id="estado" formControlName="estado">
+                        <option>Seleccione el estado del pastel</option>
+                        <option value="disponible">Disponible</option>
+                        <option value="agotado">Agotado</option>
                     </select>
                 </div>
                <div class="mt-4">

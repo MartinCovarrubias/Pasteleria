@@ -19,6 +19,8 @@ import { InjectSessionInterceptor } from './interceptors/inject-session.intercep
 import { TblAdminComponent } from './pages/tbl-admin/tbl-admin.component';
 import { TblCakesComponent } from './pages/tbl-cakes/tbl-cakes.component';
 import { AddCakesComponent } from './pages/add-cakes/add-cakes.component';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { AddCakesComponent } from './pages/add-cakes/add-cakes.component';
     FormsModule,
     RouterModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    AlifeFileToBase64Module
   ],
   providers: [
     CargarScriptsService,
