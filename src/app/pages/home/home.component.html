@@ -36,50 +36,24 @@
                      </div>
                   </div>
                </div>
-               <div class="row mb-5" >
-                  <div class="col-md-4 ">
-                     <div class="Our_box">
-                        <i><img class="imge" src="../../../assets/images/icon1.jpeg" width="200px" height="200px" alt="#"/></i>
-                        <h4>Vanilla Ice Cream Cake with Strawberries<br>$300 mxn</h4>
-                     </div>
+               <div class="row row-cols-1 row-cols-md-2  p-2" >
+                  <div class="col-md-4" *ngFor ="let c of cakes" >
+                     <div class="card" >
+                        <img src="{{'data:image/jpg;base64,' + c.imagen_pastel}}" class="card-img-top"  height="200" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{c.nombre}}</h5>
+                          <p class="card-text">{{c.descripcion}}</p>
+                          <h5>${{c.precio}}</h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end" *ngIf="!hiddenElments()">
+                           <a href=""><i class=" btn btn-success bi bi-cart-fill"></i></a>
+                        </div>
+                      </div>
                   </div>
                   
-                  <div class="col-md-4">
-                     <div class="Our_box">
-                        <i><img src="../../../assets/images/icon1.jpeg" width="200px" height="200px" alt="#"/></i>
-                        <h4>Cheesecake Filled Cake<br>$400 mxn</h4>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="Our_box">
-                        <i><img src="../../../assets/images/icon1.jpeg" width="200px" height="200px" alt="#"/></i>
-                        <h4> FROZEN COCONUT CLOUD DESSERT <br>200 mxn</h4>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="Our_box">
-                        <i><img src="./../../assets/images/icon1.jpeg" width="200x" height="200px" alt="#"/></i>
-                        <h4>Chocolate Cake With Strawberries <br>350 mxn</h4>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="Our_box">
-                        <i><img src="../../../assets/images/icon1.jpeg" width="200px" height="200px" alt="#"/></i>
-                        <h4>Peanut Butter Chocolate Layer Cake <br>200 mxn</h4>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="Our_box">
-                        <i><img src="../../../assets/images/icon1.jpeg"   width="200px" height="200px" alt="#"/></i>
-                        <h4 class="font">Cheesecake Japones <br>250 mxn</h4>
-                     </div>
-                  </div>
-                 
-                  <div class=" p-5 mb-5 d-flex justify-content-center">
-                     <a class="buttonn" routerLink="register">Ordene ahora</a>
-                  </div>
-                 
-                
+               </div>
+               <div class=" p-5 mb-5 d-flex justify-content-center">
+                  <a class="buttonn mb-5" routerLink="register">Ordene ahora</a>
                </div>
                
             </div>

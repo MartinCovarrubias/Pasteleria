@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { UsuarioI } from '../models/usuario.interface';
 import { ResponseI } from '../models/response.interface';
 import { CookieService } from 'ngx-cookie-service';
+import { PastelI } from '../models/pastel.interface';
 
 
 
@@ -13,7 +14,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class DataService {
  urlLogin: string = 'http://localhost:8080/auth/';
  url: string = 'http://localhost:8080/api/';
-
+ urlp: string = 'http://localhost:8080/public/';
  header = new HttpHeaders()
 
 
@@ -72,15 +73,32 @@ editUser(form:UsuarioI,id:any):Observable<ResponseI>{
     return this.http.get(this.url+'administradores');
    }
 
-   //* para ver todos los pasteles
+   //* para ver todos los pasteles 
 
    getCakes(){
     return this.http.get(this.url+'pasteles');
    }
-   
 
+   getCakesC(){
+    return this.http.get(this.urlp+'pasteles');
+   }
+
+   
+//* metodo para eliminar un pastel
    eliminarCakes(id:any){
     return this.http.delete(this.url+'pasteles/delete/'+id,{headers:this.header});
+  }
+
+  //* metodo para ver un solo pastel
+  getCake(id:any):Observable<PastelI>{
+    let direccion = this.url + "pasteles/edit/" + id;
+    return this.http.get<PastelI>(direccion);
+  }
+
+//* metodo para editar un pastel
+  editCake(form:PastelI,id:any):Observable<ResponseI>{
+    let direccion = this.url + "pasteles/update/" + id;
+    return this.http.put<ResponseI>(direccion,form);
   }
   
   

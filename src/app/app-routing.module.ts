@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RolGuard } from './guards/rol.guard';
 import { SessionGuard } from './guards/session.guard';
 import { AddCakesComponent } from './pages/add-cakes/add-cakes.component';
+import { EditCakesComponent } from './pages/edit-cakes/edit-cakes.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path:'tbl-cakes', component:TblCakesComponent, canActivate: [SessionGuard,RolGuard]},
   { path:'edit-user/:id', component:EditUserComponent,canActivate: [SessionGuard]},
   { path:'add-cakes', component:AddCakesComponent,canActivate: [SessionGuard,RolGuard]},
+  {path: 'editCakes/:id', component:EditCakesComponent,canActivate: [SessionGuard,RolGuard]},
 ];
 
 @NgModule({

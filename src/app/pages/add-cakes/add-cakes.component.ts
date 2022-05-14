@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
-import {CargarScriptsService} from '../../cargar-scripts.service';
+//import {CargarScriptsService} from '../../cargar-scripts.service';
 import Swal from 'sweetalert2'; 
 
 @Component({
@@ -19,7 +19,7 @@ export class AddCakesComponent implements OnInit {
     private DataService:DataService,
     private formBuilder:FormBuilder,
      private router: Router,
-    private CargarScripts:CargarScriptsService) { }
+    ) { }
 
   ngOnInit(): void {
     this.formAddCake = this.formBuilder.group(
@@ -35,12 +35,13 @@ export class AddCakesComponent implements OnInit {
         ]), 
         precio:new FormControl('',[
           Validators.required,
+          Validators.pattern('[0-9]*'),
           Validators.minLength(1),
           Validators.maxLength(8)
         ]),
         descripcion:new FormControl('',[
           Validators.required,
-          Validators.pattern('[a-zA-Z ]*')
+          Validators.pattern('[a-zA-Z0-9 ]*')
         ]), 
         estado:new FormControl('',[
           Validators.required

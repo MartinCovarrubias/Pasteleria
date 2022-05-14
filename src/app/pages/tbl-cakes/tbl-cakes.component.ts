@@ -27,20 +27,14 @@ export class TblCakesComponent implements OnInit {
       language: {
         "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
       }
-     
     };
     this.dataservice.getCakes().subscribe(
       (data)=>{
-        console
         this.cakes = data;
         this.dtTrigger.next(0);
         this.cakes['imagen_pastel'] = this._sanitizer.bypassSecurityTrustResourceUrl(this.cakes['imagen_pastel']);
       });
-
 }
-
-
-
 
 ngOnDestroy():void {
   this.dtTrigger.unsubscribe();
@@ -48,52 +42,48 @@ ngOnDestroy():void {
 
 
 editarCakes(id: any){
-  //this.router.navigate(['/edit-user/',id]);
+  this.router.navigate(['/editCakes/',id]);
 }
 
 eliminarCakes(id: any){
-  this.dataservice.eliminarCakes(id).subscribe(
-    (data)=>{
-      Swal.fire({
-        title: 'Eliminado',
-        text: 'El usuario ha sido eliminado',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-        background:'#fef2f7',
-        allowOutsideClick:true,
-        allowEscapeKey:true,
-        allowEnterKey:true,
-        padding: '2rem',
-        backdrop:true
-      }).then(()=>{
-        this.cakes = data;
-        window.location.reload();
-       
+Swal.fire({
+  title: '¿Estás seguro?',
+  text: "¡No podrás revertir esto!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: '¡Sí, eliminar!'
+}).then((result) => {
+  if(result.isConfirmed){
+    this.dataservice.eliminarCakes(id).subscribe(
+      (data)=>{
+        Swal.fire({
+          title: '¡Eliminado!',
+          text: 'El pastel ha sido eliminado.',
+          icon: 'success',
+          confirmButtonText: '¡Listo!'
+        }).then(() => {
+          window.location.reload();
+        });
+      },
+      (error)=>{
+        Swal.fire({
+          title: '¡Error!',
+          text: 'No se pudo eliminar el pastel.',
+          icon: 'error',
+          confirmButtonText: '¡Listo!'
+        }).then(() => {
+          window.location.reload();
+        }
+        );
       }
-      )
 
-
-    },
-    error =>{
-      Swal.fire({
-        title: 'Error',
-        text: 'No se pudo eliminar el usuario',
-        icon: 'error',
-        confirmButtonText: 'Ok',
-        background:'#fef2f7',
-        allowOutsideClick:true,
-        allowEscapeKey:true,
-        allowEnterKey:true,
-        padding: '2rem',
-        backdrop:true
-      }).then(()=>{
-       window.location.reload();
-        console.log(error, "no se pudo eliminar");
-      }
-      )
-      
-    })
+      );
+  }
+});
 }
+
 
 
 

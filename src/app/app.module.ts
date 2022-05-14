@@ -20,6 +20,7 @@ import { TblAdminComponent } from './pages/tbl-admin/tbl-admin.component';
 import { TblCakesComponent } from './pages/tbl-cakes/tbl-cakes.component';
 import { AddCakesComponent } from './pages/add-cakes/add-cakes.component';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { EditCakesComponent } from './pages/edit-cakes/edit-cakes.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     EditUserComponent,
     TblAdminComponent,
     TblCakesComponent,
-    AddCakesComponent
+    AddCakesComponent,
+    EditCakesComponent
   ],
   imports: [
     BrowserModule,

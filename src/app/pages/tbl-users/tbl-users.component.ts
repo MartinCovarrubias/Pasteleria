@@ -43,49 +43,43 @@ export class TblUsersComponent implements OnInit,OnDestroy {
 
 //*Este metodo es para eliminar usuarios
   eliminarUsuario(id:any){
-    this.dataservice.eliminarUsuario(id).subscribe(
-      (data)=>{
-        Swal.fire({
-          title: 'Eliminado',
-          text: 'El usuario ha sido eliminado',
-          icon: 'success',
-          confirmButtonText: 'Ok',
-          background:'#fef2f7',
-          allowOutsideClick:true,
-          allowEscapeKey:true,
-          allowEnterKey:true,
-          padding: '2rem',
-          backdrop:true
-        }).then(()=>{
-          this.clientes = data;
-          window.location.reload();
-         
-        }
-        )
-
- 
-      },
-      error =>{
-        Swal.fire({
-          title: 'Error',
-          text: 'No se pudo eliminar el usuario',
-          icon: 'error',
-          confirmButtonText: 'Ok',
-          background:'#fef2f7',
-          allowOutsideClick:true,
-          allowEscapeKey:true,
-          allowEnterKey:true,
-          padding: '2rem',
-          backdrop:true
-        }).then(()=>{
-         window.location.reload();
-          console.log(error, "no se pudo eliminar");
-        }
-        )
-        
-      })
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '¡Sí, eliminar!'
+    }).then((result) => {
+      if(result.isConfirmed){
+        this.dataservice.eliminarUsuario(id).subscribe(
+          (data)=>{
+            Swal.fire({
+              title: '¡Eliminado!',
+              text: 'El cliente ha sido eliminado.',
+              icon: 'success',
+              confirmButtonText: '¡Listo!'
+            }).then(() => {
+              window.location.reload();
+            });
+          },
+          (error)=>{
+            Swal.fire({
+              title: '¡Error!',
+              text: 'No se pudo eliminar el cliente.',
+              icon: 'error',
+              confirmButtonText: '¡Listo!'
+            }).then(() => {
+              window.location.reload();
+            }
+            );
+          }
+    
+          );
+      }
+    });
   }
-
 
 
   editarUsuario(id: any){
