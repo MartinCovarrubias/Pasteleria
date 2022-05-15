@@ -3,6 +3,7 @@ import {CargarScriptsService} from '../../cargar-scripts.service';
 import { CookieService } from 'ngx-cookie-service';
 import { DataService } from '../../services/data.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
   constructor(private _CargarScripts:CargarScriptsService,
     private cookie:CookieService,
     private DataService:DataService,
-    private _sanitizer: DomSanitizer) { 
+    private _sanitizer: DomSanitizer,
+    private router:Router) { 
    _CargarScripts.carga('arriba.js');
   }
 
@@ -42,6 +44,8 @@ export class HomeComponent implements OnInit {
      }
    }
 
- 
+   orderdetail(id: any){
+    this.router.navigate(['/order-detail/',id]);
+  }
 
 }

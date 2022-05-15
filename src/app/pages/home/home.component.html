@@ -46,7 +46,7 @@
                           <h5>${{c.precio}}</h5>
                         </div>
                         <div class="card-footer d-flex justify-content-end" *ngIf="!hiddenElments()">
-                           <a href=""><i class=" btn btn-success bi bi-cart-fill"></i></a>
+                           <a (click)="orderdetail(c.id_pastel)"><i class=" btn btn-success bi bi-cart-fill">&nbsp;comprar</i></a>
                         </div>
                       </div>
                   </div>

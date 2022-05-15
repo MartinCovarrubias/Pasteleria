@@ -78,7 +78,7 @@ editUser(form:UsuarioI,id:any):Observable<ResponseI>{
    getCakes(){
     return this.http.get(this.url+'pasteles');
    }
-
+  //* para ver todos los pasteles publicos
    getCakesC(){
     return this.http.get(this.urlp+'pasteles');
    }

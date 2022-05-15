@@ -29,10 +29,11 @@
               <a (click)="editarUsuario()" class="nav-link active cursor">Perfil</a>
             </li>
             <li class="nav-item" *ngIf="hiddenElmentsUser()">
-              <a class="nav-link active">Mis pedidos</a>
+              <a class="nav-link active" routerLink="/view-pedidos">Mis pedidos</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-md-auto">
+           
             <li class="nav-item">
               <a class="nav-link active" aria-current="page"  routerLink="..">Inicio</a>
             </li>

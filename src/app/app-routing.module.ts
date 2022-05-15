@@ -7,10 +7,12 @@ import { EditCakesComponent } from './pages/edit-cakes/edit-cakes.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TblAdminComponent } from './pages/tbl-admin/tbl-admin.component';
 import { TblCakesComponent } from './pages/tbl-cakes/tbl-cakes.component';
 import { TblUsersComponent } from './pages/tbl-users/tbl-users.component';
+import { ViewPedidosComponent } from './pages/view-pedidos/view-pedidos.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent},
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path:'edit-user/:id', component:EditUserComponent,canActivate: [SessionGuard]},
   { path:'add-cakes', component:AddCakesComponent,canActivate: [SessionGuard,RolGuard]},
   {path: 'editCakes/:id', component:EditCakesComponent,canActivate: [SessionGuard,RolGuard]},
+  { path:'view-pedidos', component:ViewPedidosComponent,canActivate: [SessionGuard]},
+  { path:'order-detail/:id', component:OrderDetailComponent,canActivate: [SessionGuard]},
 ];
 
 @NgModule({
