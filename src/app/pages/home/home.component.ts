@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   public edit : boolean;
   cakes:any;
   estado:any;
+  contador:number = 0;
   constructor(private _CargarScripts:CargarScriptsService,
     private cookie:CookieService,
     private DataService:DataService,
@@ -47,5 +48,10 @@ export class HomeComponent implements OnInit {
    orderdetail(id: any){
     this.router.navigate(['/order-detail/',id]);
   }
+
+
+carritoN(){
+  this.contador++;
+}
 
 }

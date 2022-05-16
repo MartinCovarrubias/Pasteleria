@@ -22,3 +22,8 @@ nav{
 .cursor{
     cursor: pointer;
 }
+
+
+.icon-size{
+    font-size: 1rem;
+}

@@ -21,9 +21,6 @@ datosPastel:any;
      })
   }
 
-//calcular el total de la orden
-
-
 
  
   getDate() {

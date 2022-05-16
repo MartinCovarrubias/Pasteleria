@@ -45,9 +45,11 @@
                           <p class="card-text">{{c.descripcion}}</p>
                           <h5>${{c.precio}}</h5>
                         </div>
-                        <div class="card-footer d-flex justify-content-end" *ngIf="!hiddenElments()">
-                           <a (click)="orderdetail(c.id_pastel)"><i class=" btn btn-success bi bi-cart-fill">&nbsp;comprar</i></a>
-                        </div>
+                        <div class="d-grid gap-2 d-md-block">
+                           <button class="btn btn-primary float-end btnc mb-2" type="button" (click)="orderdetail(c.id_pastel)">Comprar</button>
+                           <a (click)="carritoN()" class="btn btn-primary float-end btnc mb-2" type="button"><i class="bi bi-cart-fill" ></i></a>
+                         
+                         </div>
                       </div>
                   </div>
                   
