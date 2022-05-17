@@ -6,30 +6,47 @@
             <div class="card-header d-flex justify-content-center">
                 <h3>Detalle del pedido</h3>
             </div>
-            <div class="card-body"></div>
+            <div class="card-body" *ngFor="let d of datos" >
+
                <div class="d-flex justify-content-center">
-                   <img src="{{'data:image/jpg;base64,' + datosPastel.imagen_pastel}}" width="150" height="150" alt="">
+                   <img src="{{'data:image/jpg;base64,' + d.imagen_pastel}}" width="150" height="150" alt="">
                </div>
+
             <div class="m-4">
-                <h6 class="card-text"><b>Nombre pastel:</b> {{datosPastel.nombre}}</h6>
-                <h6 class="card-text"><b>Descripcion:</b> {{datosPastel.descripcion}}</h6>
-                <h6 class="card-text"><b>Precio:</b> {{datosPastel.precio}}</h6>
-          </div>
+                <h6 class="card-text"><b>Nombre pastel:</b> {{d.nombre}}</h6>
+                <h6 class="card-text"><b>Descripcion:</b> {{d.descripcion}}</h6>
+                <h6 class="card-text"><b>Precio:</b> {{d.precio}}</h6>
+             </div>
+            </div>
             <div>
-                <form>
-                    <div class="row m-2">
+                <form  [formGroup]="formpedido" (submit)="enviarData()" method="post">
+                  <div class="col m-2 p-2" hidden>
+                    <label for="exampleFormControlInput1" class="form-label">id usuario</label>
+                    <input type="number" class="form-control" formControlName="id_usuario">
+                  </div>
+                    <div class="row m-2" hidden>
                       <div class="col">
                         <label for="">Fecha</label>
-                        <input type="text" class="form-control" value="{{getDate()}}" [disabled]="hidden">
+                        <input type="text" class="form-control" formControlName="fecha_pedido">
                       </div>
                       <div class="col">
                         <label for="">Estado</label>
-                        <select class="form-control" [disabled]="hidden">
-                           <option value="pendiente">pendiente</option>
-                          </select>
+                        <input type="text" class="form-control" formControlName="estado">
                       </div>
                     </div>
+                    <div class="col m-2 p-2">
+                      <label for="exampleFormControlInput1" class="form-label">Cantidad</label>
+                      <input type="number" class="form-control" formControlName="cantidad" placeholder="ingrese la cantidad a comprar">
+                    </div>
+                    <div class="col m-2 p-2">
+                      <label for="exampleFormControlInput1" class="form-label">Total a pagar</label>
+                      <input type="number" class="form-control" [value]="obtenertotal()" disabled>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn btn-primary m-4">Pedir</button>
+                    </div>
                   </form>
+
                   
            </div>
     

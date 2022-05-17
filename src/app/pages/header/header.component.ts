@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { NotifyService } from 'src/app/services/notify.service';
 
 
 @Component({
@@ -10,14 +11,19 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private cookie:CookieService,private router:Router) { }
+  constructor(private cookie:CookieService,
+    private router:Router,
+    private notificaciones:NotifyService) { }
 
   //declarame la variable edit tipo  boolean
   public edit : boolean;
-
+  contador:number = 0;
 
 
   ngOnInit(): void {
+    this.notificaciones.enviarContadorObservable.subscribe(res => {
+      this.contador = res;
+    });
   }
 
 

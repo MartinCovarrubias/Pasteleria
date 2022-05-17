@@ -27,3 +27,8 @@ nav{
 .icon-size{
     font-size: 1rem;
 }
+
+
+.offcanvas {
+    border-radius: 20px;
+}

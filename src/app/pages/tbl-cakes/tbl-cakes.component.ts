@@ -13,7 +13,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class TblCakesComponent implements OnInit {
 
   constructor(private dataservice: DataService, private router:Router,private _sanitizer: DomSanitizer) { }
-  public previsualizacion: string;
+  //public previsualizacion: string;
   public archivos: any = [];
 
   cakes:any;

@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { DataService } from '../../services/data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { NotifyService } from 'src/app/services/notify.service';
 
 @Component({
   selector: 'app-home',
@@ -15,11 +16,17 @@ export class HomeComponent implements OnInit {
   cakes:any;
   estado:any;
   contador:number = 0;
+
+
+  idsAgregados: number[] = [];
+  contadorParaLosIDs: number = 0;
+
   constructor(private _CargarScripts:CargarScriptsService,
     private cookie:CookieService,
     private DataService:DataService,
     private _sanitizer: DomSanitizer,
-    private router:Router) { 
+    private router:Router,
+    private notificaciones:NotifyService) { 
    _CargarScripts.carga('arriba.js');
   }
 
@@ -50,8 +57,29 @@ export class HomeComponent implements OnInit {
   }
 
 
-carritoN(){
-  this.contador++;
+
+
+mandarValor(id: number) {
+  //deshabilitamos el boton despues de dar el click
+  this.idsAgregados[this.contadorParaLosIDs] = id;
+  this.contadorParaLosIDs++;
+  if (this.contador >= 20){
+    console.log("Ya no puedes agregar mas articulos kbron!!!!")
+  }else {
+    this.contador = this.contador + 1;
+    this.notificaciones.enviarContador(this.contador);
+  }
+}
+
+checarId(id: number): boolean {
+  //haremos un foreach para los ids agregados del array
+  for (let i = 0; i < this.idsAgregados.length; i++) {
+    if (this.idsAgregados[i] == id) {
+      //si esto es verdad, entonces desactivame el boton
+      return true;
+    }
+  }
+  return false;
 }
 
 }
