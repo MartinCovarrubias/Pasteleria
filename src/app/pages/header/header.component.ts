@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { NotifyService } from 'src/app/services/notify.service';
+import { DataService } from '../../services/data.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -10,20 +12,32 @@ import { NotifyService } from 'src/app/services/notify.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private cookie:CookieService,
-    private router:Router,
-    private notificaciones:NotifyService) { }
-
-  //declarame la variable edit tipo  boolean
+  
   public edit : boolean;
   contador:number = 0;
+ // pedidos: any[] =[];
+ pedido:any;
+  constructor(private cookie:CookieService,
+    private router:Router,
+    private notificaciones:NotifyService,
+    private DataService:DataService, 
+    private _sanitizer: DomSanitizer) { }
+
 
 
   ngOnInit(): void {
     this.notificaciones.enviarContadorObservable.subscribe(res => {
       this.contador = res;
     });
+   this.DataService.getPedidos(this.cookie.get('id_usuario')).subscribe(
+      (data)=>{
+        this.pedido = data;
+       // this.pedidos.push(data);
+     //obten la imagen del pastel
+     //this.pedidos[0].imagen_pastel = this._sanitizer.bypassSecurityTrustResourceUrl(this.pedidos[0].imagen_pastel);
+      // console.log(this.pedidos[0].imagen_pastel);
+      }
+    );
   }
 
 
@@ -32,6 +46,7 @@ export class HeaderComponent implements OnInit {
     this.cookie.delete('token');
     this.cookie.delete('id_rol');
     this.cookie.delete('id_usuario');
+  
   }
 
   hiddenElments(){

@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
   cakes:any;
   estado:any;
   contador:number = 0;
-
-
   idsAgregados: number[] = [];
   contadorParaLosIDs: number = 0;
 

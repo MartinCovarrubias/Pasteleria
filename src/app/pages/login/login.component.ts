@@ -73,7 +73,12 @@ export class LoginComponent implements OnInit {
       this.cookie.set('id_usuario',id_usuario);
       //duracion del token de una hora
       this.cookie.set('token',token,1/24);
-      this.router.navigate(['/']);
+     //si id_rol es 1 es admin redirecciona a la pagina de view pedidos
+      if(id_rol==1){
+        this.router.navigate(['/view-pedidos']);
+      }else{
+        this.router.navigate(['/']);
+      }
       
 
     },

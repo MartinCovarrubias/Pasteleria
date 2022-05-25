@@ -21,7 +21,6 @@ export class DataService {
   constructor(private http: HttpClient, private cookieService: CookieService) { 
     const token = this.cookieService.get('token');
     this.header.append('Content-Type', 'application/json');
-   // this.header.append('HTTP_AUTHORIZATION', 'Bearer ' + token);
 
   }
   
@@ -101,5 +100,9 @@ editUser(form:UsuarioI,id:any):Observable<ResponseI>{
     return this.http.put<ResponseI>(direccion,form);
   }
   
+  //* metodo para ver los pedidos
+  getPedidos(id:any){
+    return this.http.get(this.url+'carrito/ver_pedidos/'+id);
+  }
   
 }

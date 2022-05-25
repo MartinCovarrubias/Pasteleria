@@ -27,7 +27,7 @@ export class InjectSessionInterceptor implements HttpInterceptor {
      
         return next.handle(newRequest);
     }catch(e){
-      console.log('errorrrrrr',e);
+     // console.log('errorrrrrr',e);
       return next.handle(request);
     }
     

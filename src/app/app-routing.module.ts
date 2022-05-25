@@ -18,7 +18,7 @@ const routes: Routes = [
   { path:'', component:HomeComponent},
   { path:'login', component:LoginComponent},
   { path:'register', component:RegisterComponent},
-
+  { path:'home', component:HomeComponent},
 
   { path:'tbl-users', component:TblUsersComponent, canActivate: [SessionGuard,RolGuard]},
   { path:'tbl-admin', component:TblAdminComponent, canActivate: [SessionGuard,RolGuard]},

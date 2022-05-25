@@ -29,7 +29,7 @@
               <a (click)="editarUsuario()" class="nav-link active cursor">Perfil</a>
             </li>
             <li class="nav-item" *ngIf="hiddenElmentsUser()">
-              <a class="nav-link active" routerLink="/view-pedidos">Mis pedidos</a>
+              <a class="nav-link active" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" >Mis pedidos</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-md-auto">
@@ -99,6 +99,32 @@
           <button type="button" class="btn text-reset float-end" data-bs-dismiss="alert" aria-label="Close">
             <i class="bi bi-trash-fill"></i>
           </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Mis pedidos</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="list-group" *ngFor="let p of pedido">
+        <a class="list-group-item list-group-item-action alert alert-dismissible fade show">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{p.nombre}}</h5>
+            <small class="text-muted">{{p.fecha_pedido}}</small>
+          </div>
+         
+          <p class="mb-1">{{p.descripcion}}</p>
+         <div class="d-flex w-100 justify-content-between">
+          <small class="text-muted">${{p.precio}}</small>
+          <small class="text-muted">Cantidad: ${{p.cantidad}}</small>
+          <small class="text-muted">Total: ${{p.total}}</small>
+         </div>
+         <small class="text-muted">Estado del pedido: {{p.estado}}</small>
         </a>
       </div>
     </div>
