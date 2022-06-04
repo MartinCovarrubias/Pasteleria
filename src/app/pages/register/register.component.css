@@ -72,7 +72,7 @@
    .highlight {
     position: absolute;
     height: 60%;
-    width: 200px;
+    width: 100px;
     top: 25%;
     left: 0;
     pointer-events: none;
@@ -107,7 +107,7 @@
       -webkit-box-shadow: none;
      }
      .bg-register-image {
-        background: url("../../../assets/images/register.png") no-repeat center;
+        background: url("../../../assets/images/pastel-register.jpg") no-repeat center;
         background-position: center;
         background-size: cover;
         
@@ -123,7 +123,7 @@
         border-radius: 50px;
         border-radius: 50px;
         border-radius: 50px;
-        background: #ffffff;
+        background: #f7e0e0;
         box-shadow: inset 20px 20px 60px #d9d9d9,
                     inset -20px -20px 60px #ffffff;
        margin-bottom: 50px;
@@ -201,4 +201,11 @@
    }
 
 
- 
+ .font-label{
+   opacity: 0.5;
+ }
+
+ .btn-color{
+   background-color: #5D534A;
+    color: #ffffff;
+ }

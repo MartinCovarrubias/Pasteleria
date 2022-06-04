@@ -1,7 +1,7 @@
 
  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid list">
-      <a class="navbar-brand" style="margin-left: 10px;" href="#">
+      <a class="navbar-brand" style="margin-left: 10px;" routerLink="/home">
         
         Bakery
       </a>
@@ -29,19 +29,19 @@
               <a (click)="editarUsuario()" class="nav-link active cursor">Perfil</a>
             </li>
             <li class="nav-item" *ngIf="hiddenElmentsUser()">
-              <a class="nav-link active" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" >Mis pedidos</a>
+              <a class="nav-link active cursor" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" >Mis pedidos</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-md-auto">
 
-          <div class="me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+          <div  *ngIf="hiddenElmentsUser()" class="me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <i class="bi bi-cart-fill position-relative btn icon-size" >
             <span  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{contador}}</span>
             </i>
           </div>
             
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page"  routerLink="..">Inicio</a>
+              <a class="nav-link active" aria-current="page"  routerLink="/home">Inicio</a>
             </li>
               <li class="nav-item" *ngIf="hiddenElments()">
                 <a class="nav-link active" aria-current="page"  routerLink="/register">Registrarse</a>
@@ -101,6 +101,9 @@
           </button>
         </a>
       </div>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success">Comprar</button>
+      </div>
     </div>
   </div>
 
@@ -114,7 +117,7 @@
       <div class="list-group" *ngFor="let p of pedido">
         <a class="list-group-item list-group-item-action alert alert-dismissible fade show">
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{p.nombre}}</h5>
+            <h5 class="mb-1"><b>{{p.nombre}}</b></h5>
             <small class="text-muted">{{p.fecha_pedido}}</small>
           </div>
          
@@ -122,9 +125,9 @@
          <div class="d-flex w-100 justify-content-between">
           <small class="text-muted">${{p.precio}}</small>
           <small class="text-muted">Cantidad: ${{p.cantidad}}</small>
-          <small class="text-muted">Total: ${{p.total}}</small>
+          <small class="text-muted">Total: <b>${{p.total}}</b></small>
          </div>
-         <small class="text-muted">Estado del pedido: {{p.estado}}</small>
+         <small class="text-muted">Estado del pedido: <b>{{p.estado}}</b></small>
         </a>
       </div>
     </div>

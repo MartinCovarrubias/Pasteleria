@@ -237,9 +237,9 @@ p {
 }
 
 .Features .card {
-     background: #D6D2C4;
-     box-shadow:  6px 6px 12px #b4b0a5,
-                  -6px -6px 12px #f8f4e3;
+    background: #ffffe5;
+    box-shadow:  20px 20px 60px #d9d9c3,
+                 -20px -20px 60px #ffffff;
                   height: 400px;
                   margin:15px;
                  padding: auto;
@@ -303,7 +303,7 @@ p {
    .ir-arriba {
 	display:none;
     padding: 20px;
-    background-color: #9da11d;
+    background-color: #fcffaa;
     border-radius:10px;
     font-size:28px;
     cursor: pointer;

@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       password:new FormControl('',[
         Validators.required,
         Validators.minLength(6),
-        Validators.maxLength(100)
+        Validators.maxLength(8)
       ]),
      
     }
@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
       }
       )
      
-      console.log('sesion iniciada correctamente',response);
+     
   
       const {token} = response;
       const {id_usuario} = response;

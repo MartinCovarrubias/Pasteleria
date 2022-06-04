@@ -39,7 +39,8 @@ export class RegisterComponent implements OnInit {
         ]), 
         telefono:new FormControl('',[
           Validators.required,
-          Validators.pattern('[0-9]*')
+          Validators.pattern('^[0-9]{10}$')
+      
         ]),
         direccion:new FormControl('',[
           Validators.required,

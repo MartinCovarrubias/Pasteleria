@@ -57,7 +57,7 @@ export class EditUserComponent implements OnInit {
   
     this.api.getUser(this.usuarioid).subscribe(data =>{
       this.datosUsuarios = data;
-       console.log(this.datosUsuarios.id_rol);
+       
        this.getRoles();
       
       this.editarForm.setValue({
@@ -76,9 +76,45 @@ export class EditUserComponent implements OnInit {
   postForm(form: UsuarioI){
     
     this.api.editUser(form,this.usuarioid).subscribe(data=>{
-      console.log(data);
+    Swal.fire({
+      icon: 'success',
+      title: 'Usuario editado',
+      showConfirmButton: true,
+      background:'#fef2f7',
+        allowOutsideClick:true,
+        allowEscapeKey:true,
+        allowEnterKey:true,
+        padding: '2rem',
+        backdrop:true
+    }).then((result) => {
+      if (result.value && this.datosUsuarios.id_rol == '2') {
+        this.router.navigate(['/tbl-users']);
+      }else{
+        this.router.navigate(['/tbl-admin']);
+      }
+      if(result.value && this.cookie.get('id_rol') == '2'){
+        this.router.navigate(['/home']);
+      }
+
+    }
+    )
       
-     })
+     },
+     (error)=>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Algo salio mal!',
+          showConfirmButton: true,
+          background:'#fef2f7',
+          allowOutsideClick:true,
+          allowEscapeKey:true,
+          allowEnterKey:true,
+          padding: '2rem',
+          backdrop:true
+        })
+      }
+    )
  
   }
  

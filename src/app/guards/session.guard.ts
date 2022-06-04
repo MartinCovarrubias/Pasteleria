@@ -25,10 +25,10 @@ constructor(private cookieService: CookieService, private router: Router) { }
     }else{
       Swal.fire({
         title: 'Error',
-        text: 'No has iniciado sesión',
-        icon: 'error'
+        text: 'Por favor inicia sesión',
+        icon: 'warning',
       });
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
       return false;
     }
 

@@ -53,7 +53,12 @@ Swal.fire({
   showCancelButton: true,
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
-  confirmButtonText: '¡Sí, eliminar!'
+  confirmButtonText: '¡Sí, eliminar!',
+  background:'#fef2f7',
+  allowOutsideClick:false,
+  allowEscapeKey:false,
+  allowEnterKey:false,
+  padding: '2rem',
 }).then((result) => {
   if(result.isConfirmed){
     this.dataservice.eliminarCakes(id).subscribe(
@@ -62,7 +67,12 @@ Swal.fire({
           title: '¡Eliminado!',
           text: 'El pastel ha sido eliminado.',
           icon: 'success',
-          confirmButtonText: '¡Listo!'
+          confirmButtonText: '¡Listo!',
+          background:'#fef2f7',
+          allowOutsideClick:false,
+          allowEscapeKey:false,
+          allowEnterKey:false,
+          padding: '2rem',
         }).then(() => {
           window.location.reload();
         });
@@ -72,7 +82,12 @@ Swal.fire({
           title: '¡Error!',
           text: 'No se pudo eliminar el pastel.',
           icon: 'error',
-          confirmButtonText: '¡Listo!'
+          confirmButtonText: '¡Listo!',
+          background:'#fef2f7',
+          allowOutsideClick:false,
+          allowEscapeKey:false,
+          allowEnterKey:false,
+          padding: '2rem',
         }).then(() => {
           window.location.reload();
         }

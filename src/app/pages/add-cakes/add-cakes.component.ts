@@ -73,6 +73,8 @@ export class AddCakesComponent implements OnInit {
         icon: 'success',
         showCancelButton: false,
         confirmButtonColor: '#3085d6',
+        padding: '2rem',
+        background:'#fef2f7',
         cancelButtonColor: '#d33',
         confirmButtonText: 'OK'
       }).then((result) => {
@@ -102,5 +104,6 @@ export class AddCakesComponent implements OnInit {
     });
   }
 
+  
 
 }

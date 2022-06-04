@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   
   public edit : boolean;
   contador:number = 0;
- // pedidos: any[] =[];
+
  pedido:any;
   constructor(private cookie:CookieService,
     private router:Router,
@@ -29,15 +29,16 @@ export class HeaderComponent implements OnInit {
     this.notificaciones.enviarContadorObservable.subscribe(res => {
       this.contador = res;
     });
-   this.DataService.getPedidos(this.cookie.get('id_usuario')).subscribe(
-      (data)=>{
-        this.pedido = data;
-       // this.pedidos.push(data);
-     //obten la imagen del pastel
-     //this.pedidos[0].imagen_pastel = this._sanitizer.bypassSecurityTrustResourceUrl(this.pedidos[0].imagen_pastel);
-      // console.log(this.pedidos[0].imagen_pastel);
+     //si existe el token
+      const token = this.cookie.check('token');
+      if (token==true){
+        this.DataService.getPedidos(this.cookie.get('id_usuario')).subscribe(
+          (data)=>{
+            this.pedido = data;
+          
+          }
+        )
       }
-    );
   }
 
 
@@ -94,6 +95,19 @@ hiddenElmentsUser(){
 editarUsuario(){
   const id_usuario = this.cookie.get('id_usuario');
   this.router.navigate(['/edit-user',id_usuario]);
+}
+
+ocultahome(){
+ //si id_rol es 1 redirecciona a tbl-pedidos, si es 2 a home
+  const rol_id = this.cookie.get('id_rol');
+  const token = this.cookie.check('token');
+  if (rol_id == '1' && token==true){
+    this.router.navigate(['/view-pedidos']);
+  }
+  if(rol_id == '2' && token == true){
+    this.router.navigate(['/home']);
+  
+  }
 }
 
 

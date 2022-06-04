@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClientGuard } from './guards/client.guard';
 import { RolGuard } from './guards/rol.guard';
 import { SessionGuard } from './guards/session.guard';
 import { AddCakesComponent } from './pages/add-cakes/add-cakes.component';
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path:'', component:HomeComponent},
   { path:'login', component:LoginComponent},
   { path:'register', component:RegisterComponent},
-  { path:'home', component:HomeComponent},
+  { path:'home', component:HomeComponent, canActivate:[ClientGuard]},
 
   { path:'tbl-users', component:TblUsersComponent, canActivate: [SessionGuard,RolGuard]},
   { path:'tbl-admin', component:TblAdminComponent, canActivate: [SessionGuard,RolGuard]},
@@ -26,8 +27,8 @@ const routes: Routes = [
   { path:'edit-user/:id', component:EditUserComponent,canActivate: [SessionGuard]},
   { path:'add-cakes', component:AddCakesComponent,canActivate: [SessionGuard,RolGuard]},
   {path: 'editCakes/:id', component:EditCakesComponent,canActivate: [SessionGuard,RolGuard]},
-  { path:'view-pedidos', component:ViewPedidosComponent,canActivate: [SessionGuard]},
-  { path:'order-detail/:id', component:OrderDetailComponent,canActivate: [SessionGuard]},
+  { path:'view-pedidos', component:ViewPedidosComponent,canActivate: [SessionGuard,RolGuard]},
+  { path:'order-detail/:id', component:OrderDetailComponent,canActivate: [SessionGuard,ClientGuard]},
 ];
 
 @NgModule({

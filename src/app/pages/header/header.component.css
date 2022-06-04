@@ -30,6 +30,19 @@ nav{
 
 
 .offcanvas {
-    border-radius: 20px;
-    height: 40%;
+    border-radius: 10px;
+    height: 45%;
+}
+
+.offcanvas-header{
+    background-color: #5D534A;
+    color: #ffffff;
+}
+
+.offcanvas-body{
+    background-color: #F7DAD9;
+}
+
+.list-group-item{
+    background-color: #ffffe3;
 }

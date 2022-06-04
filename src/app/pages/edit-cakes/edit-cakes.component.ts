@@ -80,6 +80,7 @@ enviarData(form : PastelI){
       icon: 'success',
       title: 'Pastel editado',
       showConfirmButton: false,
+      background:'#fef2f7',
       timer: 2500
     })
    this.router.navigate(['/tbl-cakes']);

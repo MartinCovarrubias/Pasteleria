@@ -50,7 +50,8 @@ export class TblUsersComponent implements OnInit,OnDestroy {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: '¡Sí, eliminar!'
+      confirmButtonText: '¡Sí, eliminar!',
+      background:'#fef2f7',
     }).then((result) => {
       if(result.isConfirmed){
         this.dataservice.eliminarUsuario(id).subscribe(
@@ -59,7 +60,8 @@ export class TblUsersComponent implements OnInit,OnDestroy {
               title: '¡Eliminado!',
               text: 'El cliente ha sido eliminado.',
               icon: 'success',
-              confirmButtonText: '¡Listo!'
+              confirmButtonText: '¡Listo!',
+              background:'#fef2f7',
             }).then(() => {
               window.location.reload();
             });
@@ -69,7 +71,8 @@ export class TblUsersComponent implements OnInit,OnDestroy {
               title: '¡Error!',
               text: 'No se pudo eliminar el cliente.',
               icon: 'error',
-              confirmButtonText: '¡Listo!'
+              confirmButtonText: '¡Listo!',
+              background:'#fef2f7',
             }).then(() => {
               window.location.reload();
             }

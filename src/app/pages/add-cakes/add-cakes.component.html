@@ -2,29 +2,29 @@
 
 <div class="container vh100 d-flex justify-content-center flex-wrap mb-4">
     <div class="card col-sm-6 mt-4 margen">
-        <div class="card-header">
-            <h3 class="card-title">Agregar Pastel</h3> 
+        <div class="card-header centro btn-color">
+            <h3 class="card-title ">Agregar Pastel</h3> 
     </div>
     <div class="card-body">
-            <form [formGroup]="formAddCake" (submit)="enviarData()" >
+            <form [formGroup]="formAddCake" (submit)="enviarData()" novalidate>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre del pastel">
                 </div>
                 <label class="mt-4">Imagen</label>
                 <div class="form-group mt-2">
                    <div class="mb-4"> 
-                    <img [src]="cakeImg" alt="imagen del pastel"  width="250" height="250">
+                    <img [src]="cakeImg"  alt="imagen del pastel"  width="250" height="250">
                    </div>
                     <input type="file"  formControlName="imagen_pastel" alife-file-to-base64 (onFileChanged)="onFileChange($event)" accept=".png, .jpg, .jpeg"  class="form-control" id="imagen" placeholder="Imagen">
                 </div>
                 <div class="form-group mt-4">
                     <label for="descripcion">Descripcion</label>
-                    <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="Descripcion">
+                    <input type="text" class="form-control" id="descripcion" formControlName="descripcion" placeholder="Descripcion del pastel">
                 </div>
                 <div class="form-group mt-4">
                     <label for="precio">Precio</label>
-                    <input type="number" class="form-control" id="precio" formControlName="precio" placeholder="Precio">
+                    <input type="number" class="form-control" id="precio" formControlName="precio" placeholder="Precio del pastel">
                 </div>
                 <div class="form-group mt-4">
                     <label for="estado">Estado</label>
@@ -34,9 +34,10 @@
                         <option value="agotado">Agotado</option>
                     </select>
                 </div>
-               <div class="mt-4">
-                    <button type="submit" class="btn btn-primary">Agregar</button>
-               </div>
+                <div class="d-flex justify-content-center">
+                    <button [disabled]="formAddCake.invalid" class="btn  btn-color  btn-lg btn-block mt-4" type="submit">Agregar</button>
+                  </div>
+               
             </form>  
 
         

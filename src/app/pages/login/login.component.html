@@ -23,7 +23,7 @@
                                        
                                         <div class="group mt-5">
                                             <input required="" type="email" class="input form-control"  formControlName="email">
-                                            <span class="highlight"></span>
+                                           
                                             <span class="bar"></span>
                                             <div class="invalid-feedback">
                                                 Ingresa un correo valido.
@@ -34,22 +34,16 @@
 
                                         <div class="group mt-5">
                                             <input required="" type="password"  autocomplete="off"  formControlName="password" class="input form-control">
-                                            <span class="highlight"></span>
+                                           
                                             <span class="bar"></span>
                                             <div class="invalid-feedback">
                                                 Se acepta min 6 caracteres, max 8 caracteres.
                                               </div>
                                             <label >Contraseña</label>
                                           </div>
-                                      <div class="d-flex justify-content-center">
-                                        <button  class="cta btn-block mt-5">
-                                            <span>Entrar</span>
-                                            <svg viewBox="0 0 13 10" height="10px" width="15px">
-                                              <path d="M1,5 L11,5"></path>
-                                              <polyline points="8 1 12 5 8 9"></polyline>
-                                            </svg>
-                                          </button>
-                                      </div>
+                                          <div class="d-flex justify-content-center">
+                                            <button [disabled]="formlogin.invalid" class="btn  btn-color btn-user btn-block mt-4" type="submit">Entrar</button>
+                                          </div>
                                       
                                        
                                        

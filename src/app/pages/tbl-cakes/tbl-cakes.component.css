@@ -34,3 +34,8 @@ background: #ffe3e3;
       justify-content: end;
       flex-wrap: wrap;
   }
+
+  .btn-color{
+    background-color: #5D534A;
+     color: #ffffff;
+  }

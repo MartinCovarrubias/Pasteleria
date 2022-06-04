@@ -77,3 +77,18 @@
         justify-content: center;
         align-items: center;
        }
+
+         
+  
+ .btn-color{
+   background-color: #5D534A;
+    color: #ffffff;
+ }
+
+ .card-body-color{
+   border-radius: 20px;
+   background: #f5e2d6;
+   box-shadow:  20px 20px 60px #d0c0b6,
+                -20px -20px 60px #fffff6;
+ }
+

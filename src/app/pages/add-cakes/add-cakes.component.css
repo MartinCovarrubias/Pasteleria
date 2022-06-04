@@ -1,3 +1,20 @@
 .margen{
     margin-bottom: 10rem;
 }
+
+.centro{
+    text-align: center;
+  
+}
+
+.btn-color{
+    background-color: #5D534A;
+     color: #ffffff;
+  }
+
+  .card{
+      border-radius: 10px;
+    background: #f5e2d6;
+    box-shadow:  20px 20px 60px #d0c0b6,
+                 -20px -20px 60px #fffff6;
+  }

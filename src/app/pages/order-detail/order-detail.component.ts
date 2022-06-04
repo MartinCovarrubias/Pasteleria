@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
 import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-order-detail',
@@ -24,6 +26,7 @@ public datos:any [] = [];
 
   constructor(private DataService:DataService,
     private activerouter: ActivatedRoute,
+    private router:Router,
     private CookieService:CookieService,
     private formBuilder:FormBuilder,) { }
 
@@ -64,10 +67,41 @@ enviarData(){
       id_pedido:this.id_pedidos,
       id_pastel:this.pastelid
     }).subscribe(data=>{
-      console.log(data);
+      Swal.fire({
+        title: 'Pedido realizado',
+        text: 'Se ha realizado el pedido correctamente',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+        background:'#fef2f7',
+        allowOutsideClick:true,
+        allowEscapeKey:true,
+        allowEnterKey:true,
+        padding: '2rem',
+        backdrop:true
+      }).then(()=>{
+        this.router.navigate(['/home']);
+      }
+      )
     }
     )
-  })
+  },error=>{
+    Swal.fire({
+      title: 'Error',
+      text: 'No se ha podido realizar el pedido',
+      icon: 'error',
+      confirmButtonText: 'Ok',
+      background:'#fef2f7',
+      allowOutsideClick:true,
+      allowEscapeKey:true,
+      allowEnterKey:true,
+      padding: '2rem',
+      backdrop:true
+      }).then(()=>{
+        this.router.navigate(['/home']);
+      }
+      )
+    }
+    )
 }
 
 
@@ -90,4 +124,7 @@ enviarData(){
 
     return year + '-' + month + '-' + day;
   }
+
+
+
 }

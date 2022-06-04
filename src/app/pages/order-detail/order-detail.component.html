@@ -2,8 +2,8 @@
 
 <div class="margen">
     <div class="container d-flex justify-content-center">
-        <div class="card mt-4 " >
-            <div class="card-header d-flex justify-content-center">
+        <div class="card mt-4 card-body-color " >
+            <div class="card-header d-flex justify-content-center btn-color">
                 <h3>Detalle del pedido</h3>
             </div>
             <div class="card-body" *ngFor="let d of datos" >
@@ -43,7 +43,7 @@
                       <input type="number" class="form-control" [value]="obtenertotal()" disabled>
                     </div>
                     <div class="d-flex justify-content-center">
-                      <button type="submit" class="btn btn-primary m-4">Pedir</button>
+                      <button type="submit" class="btn btn-color btn-lg m-4">Pedir</button>
                     </div>
                   </form>
 
