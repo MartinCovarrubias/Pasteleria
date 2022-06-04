@@ -8,17 +8,17 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
         
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li class="nav-item dropdown" *ngIf="hiddenElmentsAdmin()">
-              <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link active dropdown-toggle animacion" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Administración 
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Pedidos</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" routerLink="/tbl-users">Clientes</a></li>
+               
+               
+                <li><a class="dropdown-item " routerLink="/tbl-users">Clientes</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" routerLink="/tbl-admin">Administradores</a></li>
                 <li><hr class="dropdown-divider"></li>
@@ -26,32 +26,32 @@
               </ul>
             </li> 
             <li class="nav-item" *ngIf="hiddenElmentsUser()">
-              <a (click)="editarUsuario()" class="nav-link active cursor">Perfil</a>
+              <a (click)="editarUsuario()" class="nav-link active cursor animacion">Perfil</a>
             </li>
             <li class="nav-item" *ngIf="hiddenElmentsUser()">
-              <a class="nav-link active cursor" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" >Mis pedidos</a>
+              <a class="nav-link active cursor animacion" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" >Mis pedidos</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-md-auto">
 
           <div  *ngIf="hiddenElmentsUser()" class="me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-            <i class="bi bi-cart-fill position-relative btn icon-size" >
+            <i class="bi bi-cart-fill position-relative btn icon-size animacion" >
             <span  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{contador}}</span>
             </i>
           </div>
             
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page"  routerLink="/home">Inicio</a>
+              <a class="nav-link active animacion" aria-current="page"  routerLink="/home">Inicio</a>
             </li>
               <li class="nav-item" *ngIf="hiddenElments()">
-                <a class="nav-link active" aria-current="page"  routerLink="/register">Registrarse</a>
+                <a class="nav-link active animacion" aria-current="page"  routerLink="/register">Registrarse</a>
               </li>
       
               <li class="nav-item " *ngIf="hiddenElments()">
-                <a class="nav-link active" aria-current="page"  routerLink="/login">Acceder</a>
+                <a class="nav-link active animacion" aria-current="page"  routerLink="/login">Acceder</a>
               </li>
               <li class="nav-item" *ngIf="!hiddenElments()" >
-                <a class="nav-link active" (click)="logout()" aria-current="page"  routerLink="/home">Salir</a>
+                <a class="nav-link active animacion" (click)="logout()" aria-current="page"  routerLink="/home">Salir</a>
               </li>
           </ul>
         
@@ -62,7 +62,7 @@
 
   <div class="offcanvas offcanvas-end borde" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-      <h5 id="offcanvasRightLabel">Tu Carrito</h5>
+      <h5 id="offcanvasRightLabel ">Tu Carrito</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">

@@ -23,6 +23,7 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import { EditCakesComponent } from './pages/edit-cakes/edit-cakes.component';
 import { ViewPedidosComponent } from './pages/view-pedidos/view-pedidos.component';
 import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
+import { EditordersComponent } from './pages/editorders/editorders.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { OrderDetailComponent } from './pages/order-detail/order-detail.componen
     AddCakesComponent,
     EditCakesComponent,
     ViewPedidosComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    EditordersComponent
   ],
   imports: [
     BrowserModule,

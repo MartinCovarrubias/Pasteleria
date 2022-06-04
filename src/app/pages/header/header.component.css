@@ -46,3 +46,14 @@ nav{
 .list-group-item{
     background-color: #ffffe3;
 }
+
+.dropdown-menu{
+    background-color: #F7DAD9;
+}
+
+.animacion:hover{
+    border-radius: 10px;
+    transition: all 250ms linear;
+    background-color:#FFF5DA;
+    
+}

@@ -5,6 +5,7 @@ import { UsuarioI } from '../models/usuario.interface';
 import { ResponseI } from '../models/response.interface';
 import { CookieService } from 'ngx-cookie-service';
 import { PastelI } from '../models/pastel.interface';
+import { PedidoI } from '../models/pedido.interface';
 
 
 
@@ -105,4 +106,20 @@ editUser(form:UsuarioI,id:any):Observable<ResponseI>{
     return this.http.get(this.url+'carrito/ver_pedidos/'+id);
   }
   
+  //* metodo para ver todos los pedidos
+  getAllpedidos(){
+    return this.http.get(this.url+'pedidos/vista_pedidos');
+  }
+
+  //* metodo para ver un solo pedido
+  getPedido(id:any):Observable<PedidoI>{
+    let direccion = this.url + "pedidos/edit/" + id;
+    return this.http.get<PedidoI>(direccion);
+  }
+
+  //* metodo para editar un pedido
+  editPedido(form:PedidoI,id:any):Observable<ResponseI>{
+    let direccion = this.url + "pedidos/update/" + id;
+    return this.http.put<ResponseI>(direccion,form);
+    }
 }

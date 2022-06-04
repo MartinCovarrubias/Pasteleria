@@ -1,3 +1,54 @@
 <app-header></app-header>
 
+  <div class="margen ">
+    <div class="container  ">
+        <div class="card mt-4 p-4">
+           <div class="card-header btn-color">
+               <h3 class="card-title">Listado de pedidos</h3>
+           </div>
+           <div class="card-body">
+               <div class="table-responsive center">
+                   <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table ">
+                       <thead class="center">
+                           <tr>
+                               <th>Id</th>
+                               <th>Fecha_pedido</th>
+                               <th>Pastel</th>
+                               <th>Descripcion</th>
+                               <th>Cliente</th>
+                               <th>Dirección</th>
+                               <th>Telefono</th>
+                               <th>cantidad</th>
+                               <th>Precio</th>
+                               <th>Total</th>
+                               <th>Estado</th>
+                               <th>Gestion</th>
+                               </tr>
+                               </thead>
+                               <tbody>
+                               <tr *ngFor="let p of pedidos">
+                                   <td>{{p.id_pedido}}</td>
+                                   <td>{{p.fecha_pedido}}</td>
+                                   <td>{{p.nombre_pastel}}</td>
+                                   <td>{{p.descripcion}}</td>
+                                   <td>{{p.nombre}}</td>
+                                   <td>{{p.direccion}}</td>
+                                   <td>{{p.telefono}}</td>
+                                   <td>{{p.cantidad}}</td>
+                                   <td>{{p.precio}}</td>
+                                   <td>{{p.total}}</td>
+                                   <td >{{p.estado}}</td>
+                                   <td>
+                                       <a (click)="editarPedido(p.id_pedido)"  ><i class="btn  btn-warning bi bi-pencil-square m"></i></a>
+                                      
+                                   </td>
+                               </tr>
+                   </table>
+               </div>
+           </div>
+        </div>
+   </div>
+
+  </div>
+
 <app-footer></app-footer>
