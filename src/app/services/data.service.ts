@@ -28,7 +28,7 @@ export class DataService {
 
   // *Este metodo es para el registro de clientes
   public post (url:string, body: any){
-    return this.http.post(url, body);
+    return this.http.post(url, body,{headers:this.header});
   }
 
    // *Este metodo es para el inicio de sesion
@@ -65,7 +65,7 @@ export class DataService {
   //*metodo para editar usuario
 editUser(form:UsuarioI,id:any):Observable<ResponseI>{
   let direccion = this.url + "usuarios/update/" + id;
-  return this.http.put<ResponseI>(direccion,form);
+  return this.http.put<ResponseI>(direccion,form,{headers:this.header});
   }
 
   //*metodo para ver los administradores
@@ -80,7 +80,7 @@ editUser(form:UsuarioI,id:any):Observable<ResponseI>{
    }
   //* para ver todos los pasteles publicos
    getCakesC(){
-    return this.http.get(this.urlp+'pasteles');
+    return this.http.get(this.urlp+"pasteles",{headers:this.header});
    }
 
    

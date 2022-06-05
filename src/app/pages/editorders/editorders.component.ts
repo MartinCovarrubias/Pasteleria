@@ -35,7 +35,7 @@ editarForm = new FormGroup({
   ngOnInit(): void {
     this.api.getPedido(this.pedidoid).subscribe(data =>{
       this.datosPedidos = data;
-      console.log(this.datosPedidos);
+     // console.log(this.datosPedidos);
       this.editarForm.setValue({
          'id_pedido': this.datosPedidos.id_pedido, 
          'fecha_pedido': this.datosPedidos.fecha_pedido,

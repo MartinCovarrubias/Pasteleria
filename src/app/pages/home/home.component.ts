@@ -33,8 +33,6 @@ export class HomeComponent implements OnInit {
       (data)=>{
         this.cakes = data;
         this.cakes['imagen_pastel'] = this._sanitizer.bypassSecurityTrustResourceUrl(this.cakes['imagen_pastel']);
-     
-      
       }
     );
 
@@ -62,7 +60,7 @@ mandarValor(id: number) {
   this.idsAgregados[this.contadorParaLosIDs] = id;
   this.contadorParaLosIDs++;
   if (this.contador >= 20){
-    console.log("Ya no puedes agregar mas articulos kbron!!!!")
+   
   }else {
     this.contador = this.contador + 1;
     this.notificaciones.enviarContador(this.contador);

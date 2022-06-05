@@ -28,7 +28,7 @@ export class ViewPedidosComponent implements OnInit {
   this.dataservice.getAllpedidos().subscribe(
     (data)=>{
       this.pedidos = data;
-      console.log(this.pedidos);
+     // console.log(this.pedidos);
       this.dtTrigger.next(0);
     });
 
