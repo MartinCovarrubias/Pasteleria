@@ -52,7 +52,7 @@ postForm(form: PedidoI){
   this.api.editPedido(form,this.pedidoid).subscribe(data=>{
   Swal.fire({
     icon: 'success',
-    title: 'Usuario editado',
+    title: 'Pedido editado',
     showConfirmButton: true,
     background:'#fef2f7',
       allowOutsideClick:true,
